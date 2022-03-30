@@ -1,19 +1,17 @@
 import { tw } from 'twind';
 import Button from '@/components/button';
 
-const productLinks = [`Features`, `Customers`, `Platform`, `Pricing`, `Enterprise`, `What's new?`];
-const aboutLinks = [`About Us`, `Careers`, `Leadership`, `Blog`, `Events`, `Press`];
-const resourceLinks = [
-  `Get started`,
-  `Guides`,
-  `Tools`,
-  `Case studies`,
-  `Solutions`,
-  `FAQs`,
-  `Help Center`,
-  `Training`,
-  `Other resources`,
-];
+const quickLinks = { name: `Quick Links`, links: [`Home`, `About`, `Contact`] };
+const otherLinks = {
+  name: `Others Links`,
+  links: [`Privacy Policy`, `Copy Right`, `Terms and Conditions`, `Amazon Affiliate Disclosure`],
+};
+const favoriteSites = {
+  name: `Favorite Sites`,
+  links: [`Theislah`, `Fincz`, `Itechf`, `Dqote`],
+};
+
+// Copyright © 2020-2022 Bestrani. All Rights Reserved.
 
 const Footer = () => (
   <footer className={tw(`bg-white border-t border-gray-400 pt-14 pb-16`)}>
@@ -26,9 +24,9 @@ const Footer = () => (
         <ul className={tw(`text-lg font-light flex flex-wrap w-full`)}>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>Product</h4>
+              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>{quickLinks.name}</h4>
               <ul>
-                {productLinks.map((link) => (
+                {quickLinks.links.map((link) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
@@ -38,9 +36,9 @@ const Footer = () => (
           </li>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>Resources</h4>
+              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>{otherLinks.name}</h4>
               <ul>
-                {resourceLinks.map((link) => (
+                {otherLinks.links.map((link) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
@@ -50,9 +48,9 @@ const Footer = () => (
           </li>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>About Us</h4>
+              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>{favoriteSites.name}</h4>
               <ul>
-                {aboutLinks.map((link) => (
+                {favoriteSites.links.map((link) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
