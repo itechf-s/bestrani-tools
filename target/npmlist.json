@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"startd-theme","dependencies":{"@fontsource/inter":{"version":"4.2.1"},"@svgr/webpack":{"version":"5.5.0"},"next-seo":{"version":"4.20.0"},"next":{"version":"10.0.7"},"react-dom":{"version":"17.0.1"},"react":{"version":"17.0.1"},"twind":{"version":"0.15.4"}}}

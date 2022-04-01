@@ -1,9 +1,9 @@
 {
-  "name": "startd-theme",
-  "description": "A TypeScript/Next.js theme that includes everything you need to build amazing landing page!",
+  "name": "bestrani-tools",
+  "description": "A TypeScript/Next.js theme that includes everything you need to build amazing tool website!",
   "version": "1.0.0",
   "private": true,
-  "author": "Jaakko Kytölä <kytola.jaakko@gmail.com> (jaakkokytola.com)",
+  "author": "Itechf <itechfsite@gmail.com> (itechf.com)",
   "license": "MIT",
   "keywords": [
     "nextjs",

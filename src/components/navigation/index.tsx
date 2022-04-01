@@ -14,34 +14,34 @@ type Link = {
 
 const links = [
   {
-    label: `Features`,
+    label: `BEAUTY`,
     href: `/`,
   },
   {
-    label: `Testimonials`,
+    label: `FASHION`,
     href: `/`,
   },
   {
-    label: `Pricing`,
+    label: `HEALTH`,
     href: `/`,
   },
   {
-    label: `Blog`,
+    label: `PRODUCT`,
     href: `/`,
   },
 ];
 
 const secondaryLinks = [
   {
-    label: `Contact sales`,
+    label: `Tools`,
     href: `/`,
   },
   {
-    label: `Log in`,
+    label: `Log Out`,
     href: `/`,
   },
   {
-    label: `Get Started`,
+    label: `Blog`,
     href: `/`,
   },
 ];
@@ -138,9 +138,9 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button modifier="border-0 mr-2">Contact sales</Button>
-              <Button modifier="border-0 mr-2">Log in</Button>
-              <Button primary>Get started</Button>
+              <Button modifier="border-0 mr-2">Tools</Button>
+              <Button modifier="border-0 mr-2">Out</Button>
+              <Button primary>Blog</Button>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>
