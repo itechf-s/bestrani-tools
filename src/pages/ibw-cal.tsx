@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import VideoSection from '@/components/video-section';
+import ToolSection from '@/components/tool-section';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
 import CasesSection from '@/components/cases-section';
@@ -16,8 +17,7 @@ export default function Home() {
         description="Bestrani blog in your way that includes everything you need to build amazing landing page!"
       />
       <main>
-        <FeatureSection />
-        <VideoSection />
+        <ToolSection />
         <ListSection />
       </main>
       <Footer />
