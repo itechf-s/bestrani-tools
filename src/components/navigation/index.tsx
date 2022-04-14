@@ -34,7 +34,7 @@ const links = [
 const secondaryLinks = [
   {
     label: `Tools`,
-    href: `/`,
+    href: `/tools/ideal-body-weight-calculator`,
   },
   {
     label: `Log Out`,
@@ -120,7 +120,7 @@ const Navigation = () => {
         <div className={tw(`flex items-center justify-between h-24`)}>
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <img className={tw(`h-12 w-12`)} src="logo.svg" alt="logo" width={48} height={48} />
+              <img className={tw(`h-10 w-auto`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
             </div>
             <div className={tw(`hidden md:block`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
@@ -128,7 +128,7 @@ const Navigation = () => {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={tw(`text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium`)}
+                    className={tw(`text-gray-600 hover:text-gray-800 hover:bg-red-300 px-3 py-2 rounded-md font-medium`)}
                   >
                     {link.label}
                   </a>
@@ -138,9 +138,8 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button modifier="border-0 mr-2">Tools</Button>
-              <Button modifier="border-0 mr-2">Out</Button>
-              <Button primary>Blog</Button>
+              <Button modifier="border-0 mr-2"><a href="/tools/ideal-body-weight-calculator">Tools</a></Button>
+              <Button primary><a href="https://bestrani.com/">Blog</a></Button>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>

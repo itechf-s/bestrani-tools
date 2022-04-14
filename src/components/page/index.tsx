@@ -9,7 +9,7 @@ interface IProps {
 const Page = ({ children }: IProps) => (
   <div>
     <Head>
-      <link rel="icon" href="/logo.svg" />
+      <link rel="icon" href="https://bestrani.com/images/icons/favicon.ico" />
     </Head>
     <div className={tw(`min-h-screen flex flex-col`)}>
       <Navigation />

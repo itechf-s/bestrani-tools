@@ -29,14 +29,12 @@ const favoriteSites = {
   ],
 };
 
-// Copyright © 2020-2022 Bestrani. All Rights Reserved.
-
 const Footer = () => (
-  <footer className={tw(`bg-white border-t border-gray-400 pt-14 pb-16`)}>
-    <div className={tw(`max-w-7xl mx-auto text-gray-400 px-8 lg:px-0 flex flex-wrap`)}>
+  <footer className={tw(`bg-white border-t border-gray-400 pt-2 pb-2`)}>
+    <div className={tw(`max-w-7xl mx-auto text-gray-400 px-8 lg:px-0 flex flex-wrap pb-2`)}>
       <div className={tw(`mb-14 flex items-center w-full`)}>
-        <img className={tw(`h-12 w-12 mr-4`)} src="logo.svg" alt="logo" width={48} height={48} />
-        <p className={tw(`text-4xl text-indigo-500 font-bold`)}>STARTD</p>
+        <img className={tw(`h-10 w-auto mr-4`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
+        <p className={tw(`text-4xl text-indigo-500 font-bold`)}>FASHION</p>
       </div>
       <div className={tw(`w-full lg:w-1/2`)}>
         <ul className={tw(`text-lg font-light flex flex-wrap w-full`)}>
@@ -46,7 +44,7 @@ const Footer = () => (
               <ul>
                 {quickLinks.links.map(({ title, url }) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={title}>
-                    <a href={url}>{title}</a>
+                    <a className={tw(`hover:underline hover:text-red-500`)} href={url}>{title}</a>
                   </li>
                 ))}
               </ul>
@@ -58,7 +56,7 @@ const Footer = () => (
               <ul>
                 {otherLinks.links.map(({ title, url }) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={title}>
-                    <a href={url}>{title}</a>
+                    <a className={tw(`hover:underline hover:text-red-500`)} href={url}>{title}</a>
                   </li>
                 ))}
               </ul>
@@ -70,7 +68,7 @@ const Footer = () => (
               <ul>
                 {favoriteSites.links.map(({ title, url }) => (
                   <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={title}>
-                    <a href={url}>{title}</a>
+                    <a className={tw(`hover:underline hover:text-red-500`)} href={url}>{title}</a>
                   </li>
                 ))}
               </ul>
@@ -93,6 +91,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
+    <div className={tw(`bg-white border-t border-gray-400 pt-1 text-center font-serif`)}>Copyright © 2020-2022 Bestrani. All Rights Reserved.</div>
   </footer>
 );
 
