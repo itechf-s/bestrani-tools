@@ -120,7 +120,9 @@ const Navigation = () => {
         <div className={tw(`flex items-center justify-between h-24`)}>
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <img className={tw(`h-10 w-auto`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
+              <a href="/">
+                <img className={tw(`h-10 w-auto`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
+              </a>
             </div>
             <div className={tw(`hidden md:block`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
