@@ -6,7 +6,7 @@ const ToolSection = () => (
     <h2 className={tw(`text-center pb-4 text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 rounded-xl`)}>
       Ideal Body Weight Calculator
     </h2>
-      <div className={tw(`max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 border items-center`)}>
+      <div className={tw(`flex flex-col max-w-7xl py-6 sm:px-6 lg:px-8 border-1 border-red-200`)}>
         <h4 className={tw(`font-mono text-sm uppercase text-gray-500 mb-3`)}>Gender</h4>
         <div className={tw(`flex w-full`)}>
           <input
@@ -38,6 +38,7 @@ const ToolSection = () => (
           <Button>Subscribe</Button>
         </div>
       </div>
+      
   </div>
 );
 
