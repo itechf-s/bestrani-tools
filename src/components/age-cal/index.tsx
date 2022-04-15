@@ -18,11 +18,11 @@ export default function App() {
       <form onSubmit={handleSubmit(onSubmit)} className={tw(`border border-gray-300 bg-red-100 min-w-0 w-full rounded text-gray-800 py-2 px-3 mr-2`)} >
       <label>Birth Date</label>
       <br />
-      <input type="date" placeholder="birthDate" {...register("birthDate")}
+      <input type="date" placeholder="birthDate" defaultValue="2017-10-13" {...register("birthDate", {required: true})}
       className={tw(`text-red-500 py-3 mb-3`)} />
       <label>Present Date</label>
       <br />
-      <input type="date" placeholder="presentDate" {...register("presentDate")}
+      <input type="date" placeholder="presentDate" defaultValue="2022-03-12" {...register("presentDate")}
       className={tw(`text-red-500 py-3 mb-3`)}
       />
 

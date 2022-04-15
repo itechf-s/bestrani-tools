@@ -29,6 +29,14 @@ const links = [
     label: `PRODUCT`,
     href: `/`,
   },
+  {
+    label: `Age Calculator`,
+    href: `/tools/age-calculator`,
+  },
+  {
+    label: `Love Calculator`,
+    href: `/tools/love-compatibility-calculator`,
+  },
 ];
 
 const secondaryLinks = [
