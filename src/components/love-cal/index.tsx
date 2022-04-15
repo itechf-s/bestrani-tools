@@ -61,13 +61,13 @@ export default function LoveCal() {
       </form>
       {result.name &&
         <>
-        <div className={tw(`text-red-500 py-3 mb-3`)}>Results</div>
-      <div className={tw(`text-center border-green-400 border`)}>
-        <div>{result.name}</div>
-        <div>{result.score} %</div>
-        <div><img src={result.img} alt="Love calculator" title="Love calculator" height={100} width={100} /></div>
-        <div>{result.msg}</div>
-      </div>
+          <div className={tw(`text-red-500 py-3 mb-3`)}>Results</div>
+          <div className={tw(`text-center border-green-400 border`)}>
+            <div>{result.name}</div>
+            <div>{result.score} %</div>
+            <div><img src={result.img} alt="Love calculator" title="Love calculator" height={100} width={100} /></div>
+            <div>{result.msg}</div>
+          </div>
         </>
       }
     </div>
