@@ -37,7 +37,6 @@ export default function LoveCal() {
     setResult(resultData)
   }
   const [result, setResult] = useState<Result>({ name: "", score: "", img: "", msg: "" });
-  console.log(watch("name"))
 
   return (
     <div className={tw(`container`)}>
