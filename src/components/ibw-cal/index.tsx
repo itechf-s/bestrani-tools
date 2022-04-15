@@ -1,7 +1,7 @@
 import { tw } from 'twind';
 import Button from '@/components/button';
 
-const ToolSection = () => (
+const IdealBodyWeight = () => (
   <div className={tw(`container`)}>
     <h2 className={tw(`text-center pb-4 text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 rounded-xl`)}>
       Ideal Body Weight Calculator
@@ -42,4 +42,4 @@ const ToolSection = () => (
   </div>
 );
 
-export default ToolSection;
+export default IdealBodyWeight;
