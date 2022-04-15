@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className={tw(`container`)}>
       <form onSubmit={handleSubmit(onSubmit)} className={tw(`border border-gray-300 bg-red-100 min-w-0 w-full rounded text-gray-800 py-2 px-3 mr-2`)} >
-      <input type="datetime" placeholder="birthDate" {...register("birthDate")} />
+      <input type="date" placeholder="birthDate" {...register("birthDate")} />
 
         <input defaultValue="test" {...register("example")} 
         className={tw(`border border-gray-300 bg-red-100 min-w-0 w-full rounded text-gray-800 py-2 px-3 mr-2`)}
