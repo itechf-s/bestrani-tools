@@ -20,7 +20,7 @@ export default function App() {
   const twResultT = apply(`max-w-sm m-auto text-3xl font-bold text-green-600 text-center mt-8 mb-8`)
   const twResultBlock = apply(`border-2 border-gray-300 max-w-sm p-4 m-auto`)
   const twResultLabel = apply(`pl-2 mt-2 text-lg text-gray-700 font-bold`)
-  const twResultText = apply(`pl-2 text-lg text-gray-500 font-medium`)
+  const twResultText = apply(`pl-2 text-lg text-blue-600 font-medium hover:text-blue-800 hover:font-bold`)
 
   console.log(watch("birthDate"))
 
@@ -51,36 +51,21 @@ export default function App() {
 
         <div className={tw`${twResultLabel}`}>Your Age in Month is:</div>
         <div className={tw`${twResultText}`}>375 months, 2 weeks, 1 days</div>
-        <p className={tw(`text-lg text-black font-semibold mb-2`)}>
-          Your Age in Week is:
-        </p>
-        <p className={tw(`text-blue-500 font-medium mb-2`)}>
-          1632 weeks, 4 days, 11 hours
-        </p>
-        <p className={tw(`text-lg text-black font-semibold mb-2`)}>
-          Your Age in Days is:
-        </p>
-        <p className={tw(`text-blue-500 font-medium mb-2`)}>
-          11428 days, 11 hours, 12 minutes
-        </p>
-        <p className={tw(`text-lg text-black font-semibold mb-2`)}>
-          Your Age in Hours is:
-        </p>
-        <p className={tw(`text-blue-500 font-medium mb-2`)}>
-          274283 hours, 12 minutes, 8 seconds
-        </p>
-        <p className={tw(`text-lg text-black font-semibold mb-2`)}>
-          Your Age in Minutes is:
-        </p>
-        <p className={tw(`text-blue-500 font-medium mb-2`)}>
-          16456992 minutes, and 8 seconds
-        </p>
-        <p className={tw(`text-lg text-black font-semibold mb-2`)}>
-          Your Age in Seconds is:
-        </p>
-        <p className={tw(`text-blue-500 font-medium mb-2`)}>
-          987419528 seconds since your birth
-        </p>
+        
+        <div className={tw`${twResultLabel}`}>Your Age in Week is:</div>
+        <div className={tw`${twResultText}`}>1632 weeks, 4 days, 11 hours</div>
+
+        <div className={tw`${twResultLabel}`}>Your Age in Days is:</div>
+        <div className={tw`${twResultText}`}>11428 days, 11 hours, 12 minutes</div>
+
+        <div className={tw`${twResultLabel}`}>Your Age in Hours is:</div>
+        <div className={tw`${twResultText}`}>274283 hours, 12 minutes, 8 seconds</div>
+
+        <div className={tw`${twResultLabel}`}>Your Age in Minutes is:</div>
+        <div className={tw`${twResultText}`}>16456992 minutes, and 8 seconds</div>
+
+        <div className={tw`${twResultLabel}`}>Your Age in Seconds is:</div>
+        <div className={tw`${twResultText}`}>987419528 seconds since your birth</div>
       </div>
 
     </>
