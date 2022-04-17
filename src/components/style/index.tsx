@@ -11,7 +11,6 @@ const style = {
     twResultBlock: apply(`border-2 border-gray-300 max-w-sm p-4 m-auto`),
     twResultLabel: apply(`pl-2 mt-2 text-lg text-gray-700`),
     twResultText: apply(`pl-2 text-lg text-blue-600 font-medium hover:text-blue-800 hover:font-bold`),
-
 };
 
 export default style;

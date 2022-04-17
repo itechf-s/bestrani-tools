@@ -1,83 +1,141 @@
-function isAlphaKey(evt) {
-  evt = evt ? evt : event;
-  var charCode = evt.charCode ? evt.charCode : evt.keyCode ? evt.keyCode : evt.which ? evt.which : 0;
-  if (charCode == 45) return true;
-  if (charCode > 32 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
-    return false;
-  }
-  return true;
-}
-function isNumberKey(evt) {
-  var charCode = evt.which ? evt.which : event.keyCode;
-  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-  return true;
-}
-function processForm() {
-  document.getElementById('result').style.display = 'none';
-  var your_name = document.getElementById('your_name').value;
-  var partner_name = document.getElementById('partner_name').value;
-  if (your_name == '') {
-    alert('Please enter Your Name');
-    your_name.focus;
-    return false;
-  }
-  if (partner_name == '') {
-    alert('Please enter Your Partner Name');
-    partner_name.focus;
-    return false;
-  }
-  var fullstring = your_name + ' loves ' + partner_name;
-  var numStr = convertStrToNumberLogic(fullstring);
-  var rescontent;
-  if (numStr >= 0 && numStr <= 20) {
-    rescontent =
-      '<img src=https://www.stylecraze.com/wp-content/themes/buddyboss-child/images/love-image-0-20.jpg alt="Love calculator" title="Love calculator"/><p>If Elizabeth and Mr. Darcy of Pride and Prejudice had calculated their love compatibility, chances are they would have found themselves in this category! But love stories in 1813 were quite different from modern love stories. Compatibility of personalities and sometimes even professions is a MUST. If you do not have that with your crush or current partner, you sure will find it with a more warm soul who will be ready to accept as you are.';
-  } else if (numStr >= 21 && numStr <= 50) {
-    rescontent =
-      '<img src=https://www.stylecraze.com/wp-content/themes/buddyboss-child/images/love-image-21-50.jpg alt="Love calculator" title="Love calculator"/><p>Is your partner going hot and cold on you? Do you often feel like you are chasing a mirage? Probably, you are. Listen, your heart is not always right. Hormones play tricks all the time. If you both are looking for a fling, this number is good. But if you are looking for something meaningful, look for the real deal. Fix your love glasses because your person is probably right in front of your eyes';
-  } else if (numStr >= 51 && numStr <= 79) {
-    rescontent =
-      '<img src=https://www.stylecraze.com/wp-content/themes/buddyboss-child/images/love-image-51-79.jpg alt="Love calculator" title="Love calculator"/><p>You may not agree on everything, but you both care for each other. Discussions are intense, so are your parting hugs. Compatibility may not be 100%, but love sure is in the air. If there’s something that is bothering you about your partner, sit down, and have a conversation. Address the issues before they get out of hand. Having healthy boundaries is good for both of you in the long run. Also, don’t forget to empathize with your partner’s difference in opinion and outlook.';
-  } else if (numStr >= 80 && numStr <= 100) {
-    rescontent =
-      '<img src=https://www.stylecraze.com/wp-content/themes/buddyboss-child/images/love-image-80-100.jpg alt="Love calculator" title="Love calculator"/><p>Everything else fades when you’ve found “the one.” Your love and compatibility can make the gods jealous. From your choice of food, cities to travel, music to dance to, and weird hobbies – you both mirror each other, bringing out the best of your personalities and qualities. Yes, there are occasional arguments, but you both soon find solutions and go about your day. What you have is precious (*touchwood). Nurture and preserve. Time may test your bond, but you sure will overcome it.';
-  }
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('result_string').innerHTML = fullstring;
-  document.getElementById('result_numstr').innerHTML = numStr;
-  document.getElementById('result_rescontent').innerHTML = rescontent;
-  jQuery('html,body').animate({ scrollTop: jQuery('#result').offset().top - 5 }, 'slow');
-}
-function convertStrToNumberLogic(str) {
-  str = str.replace(/ /g, '').toLowerCase();
-  var i = 0;
-  var num = '';
-  while (str.length) {
-    var c = str.charAt(i);
-    var pattern = new RegExp(c, 'g');
-    num += str.split(c).length - 1;
-    str = str.replace(pattern, '');
-  }
-  var per = calculateLovePercentage(num);
-  return per;
-}
-function calculateLovePercentage(str) {
-  var per = '';
-  while (str.length) {
-    if (str.length == 1) {
-      var f = str.charAt(0);
-      per += f;
-      str = '';
-    } else {
-      var f = str.charAt(0);
-      var l = str.charAt(str.length - 1);
-      per += +f + +l;
-      var position = 1;
-      str = str.substring(0, position - 1) + str.substring(position, str.length);
-      position = str.length;
-      str = str.substring(0, position - 1) + str.substring(position, str.length);
+jQuery(document).ready(function ($) {
+  $('#result').hide();
+  var START_YEAR = 1900;
+  var currentDate = moment();
+  var currentDay = parseInt(currentDate.format('D'));
+  var currentMonth = parseInt(currentDate.format('M'));
+  var currentYear = parseInt(currentDate.format('YYYY'));
+  for (var year_item = START_YEAR; year_item <= currentYear + 50; year_item++) {
+    $('.year-select').append('<option value="' + year_item + '">' + year_item + '');
+    if (year_item == 1991) {
+      $('.year-select option[value=' + year_item + ']').attr('selected', 'selected');
     }
   }
-  if (per.length > 2) per = calculateLovePercentage(per);
-  return per;
+  $('#current_day').val(currentDay);
+  $('#current_month').val(currentMonth);
+  $('#current_year').val(currentYear);
+  var dobDay = parseInt($('#birth_day').val());
+  var dobMonth = parseInt($('#birth_month').val());
+  var dobYear = parseInt($('#birth_year').val());
+  var nextYear = currentYear + 1;
+  var dobNext = moment([2017, 10, 20]);
+  $('#generate_btn').click(function () {
+    var _section = $(this).closest('.cd-content');
+    var _dob_weekday;
+    var currentHour = parseInt(currentDate.format('HH'));
+    var currentMinute = parseInt(currentDate.format('mm'));
+    var currentSecond = parseInt(currentDate.format('ss'));
+    var date = parseInt($('#birth_day').val());
+    var month = parseInt($('#birth_month').val());
+    var year = parseInt($('#birth_year').val());
+    var hour = 0;
+    var minute = 0;
+    var _current_date = parseInt($('#current_day').val());
+    var _current_month = parseInt($('#current_month').val());
+    var _current_year = parseInt($('#current_year').val());
+    var _current_hour = currentHour;
+    var _current_minute = currentMinute;
+    var isleap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+    if (
+      moment([_current_year, _current_month - 1, _current_date]).unix() <= moment([year - 1, month - 1, date]).unix()
+    ) {
+      toastr.error('Date of birth needs to be earlier than the age at date.', 'Incorrect Date!');
+      return !1;
+    }
+    if (isNaN(date) || isNaN(month) || isNaN(year)) {
+      toastr.error('Date must be in the correct Day.', 'Incorrect Date!');
+      return !1;
+    } else {
+      if (date > 31 || date < 1) {
+        toastr.error('Date must be in the correct Day.', 'Incorrect Day!');
+        return !1;
+      } else if ((month == 4 || month == 6 || month == 9 || month == 11) && date == 31) {
+        toastr.error('Date must be in the correct Day.', 'Incorrect Day!');
+        return !1;
+      } else if ((month == 2 && date > 29) || (month == 2 && date == 29 && !isleap)) {
+        toastr.error('Date must be in the correct Day.', 'Incorrect Day!');
+        return !1;
+      }
+      if (month > 12 || month < 1) {
+        toastr.error('Date must be in the correct month.', 'Incorrect Month!');
+        return !1;
+      }
+      if (year > 2050 || year < 1900 || year > _current_year || (year == _current_year && month > _current_month)) {
+        toastr.error('Date must be in the correct year.', 'Incorrect Year!');
+        return !1;
+      }
+    }
+    var birthMoment = [year, month - 1, date, hour, minute];
+    var currentMoment = moment({
+      years: _current_year,
+      months: _current_month - 1,
+      days: _current_date,
+      hours: _current_hour,
+      minutes: _current_minute,
+      seconds: currentSecond,
+    });
+    getAllAge(moment(birthMoment), moment(currentMoment));
+    getMonth(moment(birthMoment), moment(currentMoment));
+    getWeek(moment(birthMoment), moment(currentMoment));
+    getDays(moment(birthMoment), moment(currentMoment));
+    getHours(moment(birthMoment), moment(currentMoment));
+    getMinutes(moment(birthMoment), moment(currentMoment));
+    getSeconds(moment(birthMoment), moment(currentMoment));
+    $('#result').show();
+    $('.results-block,.results-block .loader, .progress-sec').removeClass('hidden');
+    setTimeout(function () {
+      $('.results-block .loader').addClass('hidden');
+    }, 500);
+  });
+});
+function getAllAge(dob, current) {
+  var years = current.diff(dob, 'year');
+  dob.add(years, 'years');
+  var months = current.diff(dob, 'months');
+  dob.add(months, 'months');
+  var days = current.diff(dob, 'days');
+  $('#result_full').text(years + ' years, ' + months + ' months, ' + days + ' days');
+}
+function getMonth(dob, current) {
+  var months = current.diff(dob, 'months');
+  dob.add(months, 'months');
+  var week = current.diff(dob, 'week');
+  dob.add(week, 'week');
+  var days = current.diff(dob, 'days');
+  $('#result_month').text(months + ' months, ' + week + ' weeks, ' + days + ' days');
+}
+function getWeek(dob, current) {
+  var week = current.diff(dob, 'week');
+  dob.add(week, 'week');
+  var days = current.diff(dob, 'days');
+  dob.add(days, 'days');
+  var hours = current.diff(dob, 'hours');
+  $('#result_week').text(week + ' weeks, ' + days + ' days, ' + hours + ' hours');
+}
+function getDays(dob, current) {
+  var days = current.diff(dob, 'days');
+  dob.add(days, 'days');
+  var hours = current.diff(dob, 'hours');
+  dob.add(hours, 'hours');
+  var minutes = current.diff(dob, 'minutes');
+  $('#result_days').text(days + ' days, ' + hours + ' hours, ' + minutes + ' minutes');
+}
+function getHours(dob, current) {
+  var hours = current.diff(dob, 'hours');
+  dob.add(hours, 'hours');
+  var minutes = current.diff(dob, 'minutes');
+  dob.add(minutes, 'minutes');
+  var seconds = current.diff(dob, 'seconds');
+  $('#result_hours').text(hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds');
+}
+function getMinutes(dob, current) {
+  var minutes = current.diff(dob, 'minutes');
+  dob.add(minutes, 'minutes');
+  var seconds = current.diff(dob, 'seconds');
+  $('#result_minutes').text(minutes + ' minutes, and ' + seconds + ' seconds');
+}
+function getSeconds(dob, current) {
+  var seconds = current.diff(dob, 'seconds');
+  dob.add(seconds, 'seconds');
+  $('#result_seconds').text(seconds + ' seconds since your birth');
 }

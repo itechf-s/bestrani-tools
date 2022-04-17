@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { apply, tw } from 'twind';
+import { tw } from 'twind';
 import style from "@/components/style"
+import { DateTime } from 'luxon';
+
 
 
 type Inputs = {
@@ -9,12 +11,17 @@ type Inputs = {
   presentDate: Date
 };
 
-export default function App() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+let msg = "abc"
 
-  
-  console.log(watch("birthDate"))
+export default function App() {
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    console.log(data.birthDate);
+    console.log(data.presentDate);
+    
+    const now = DateTime.now();
+    msg = "xyz" + now + " | " + data.birthDate
+  }
 
   return (
     <>
@@ -36,7 +43,7 @@ export default function App() {
       </form>
 
 
-      <div className={tw`${style.twResultT}`}>Results {style.a} </div>
+      <div className={tw`${style.twResultT}`}>Results {msg}</div>
       <div className={tw`${style.twResultBlock}`}>
         <div className={tw`${style.twResultLabel}`}>Your Age is:</div>
         <div className={tw`${style.twResultText}`}>31 years, 3 months, 15 days</div>
