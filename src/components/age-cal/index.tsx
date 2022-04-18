@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { tw } from 'twind';
 import style from "@/components/style"
@@ -11,16 +11,32 @@ type Inputs = {
   presentDate: Date
 };
 
-let msg = "abc"
-
 export default function App() {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  type Result = {
+    yymmdd: string,
+    mmwwdd: string,
+    wwddhh: string,
+    ddhhmm: string,
+    hhmmss: string,
+    mmss: string,
+    ss: string,
+  }
+  const [result, setResult] = useState<Result>();
   const onSubmit: SubmitHandler<Inputs> = data => {
-    console.log(data.birthDate);
-    console.log(data.presentDate);
-    
-    const now = DateTime.now();
-    msg = "xyz" + now + " | " + data.birthDate
+    const startDate = DateTime.fromJSDate(data.birthDate)
+    const endDate = DateTime.fromJSDate(data.presentDate)
+    // console.log(`start Date ${startDate} | end date ${endDate}`);
+    let output: Result = {
+      yymmdd: endDate.diff(startDate, ['years', 'months', 'days']).toHuman(),
+      mmwwdd: endDate.diff(startDate, ['months', 'weeks', 'days']).toHuman(),
+      wwddhh: endDate.diff(startDate, ['weeks', 'days', 'hours']).toHuman(),
+      ddhhmm: endDate.diff(startDate, ['days', 'hours', 'minutes']).toHuman(),
+      hhmmss: endDate.diff(startDate, ['hours', 'minutes', 'seconds']).toHuman(),
+      mmss: endDate.diff(startDate, ['minutes', 'seconds']).toHuman(),
+      ss: endDate.diff(startDate, ['seconds']).toHuman()
+    }
+    setResult(output)
   }
 
   return (
@@ -29,12 +45,12 @@ export default function App() {
 
 
         <div className={tw`${style.twLabel}`} >SELECT DATE OF BIRTH</div>
-        <input type="date" id="birthDate" placeholder="birthDate" defaultValue="2017-10-13" {...register("birthDate", { required: true })}
+        <input type="date" id="birthDate" placeholder="birthDate" defaultValue="2017-10-13" {...register("birthDate", { required: true, valueAsDate: true })}
           className={tw`${style.twInputText}`} />
         {errors.birthDate && <span className={tw`${style.twErrorMsg}`}>DATE OF BIRTH Required.</span>}
 
         <div className={tw`${style.twLabel}`}>AGE AT THE DATE OF</div>
-        <input type="date" placeholder="presentDate" defaultValue="2022-03-12" {...register("presentDate", { required: true })}
+        <input type="date" placeholder="presentDate" defaultValue="2022-03-12" {...register("presentDate", { required: true, valueAsDate: true })}
           className={tw`${style.twInputText}`} />
         {errors.presentDate && <span className={tw`${style.twErrorMsg}`}>AGE AT THE DATE OF Required.</span>}
         <div></div>
@@ -42,30 +58,32 @@ export default function App() {
 
       </form>
 
+      { result &&
+        <div>
+        <div className={tw`${style.twResultT}`}>Results</div>
+        <div className={tw`${style.twResultBlock}`}>
+          <div className={tw`${style.twResultLabel}`}>Your Age is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.yymmdd}</div>
 
-      <div className={tw`${style.twResultT}`}>Results {msg}</div>
-      <div className={tw`${style.twResultBlock}`}>
-        <div className={tw`${style.twResultLabel}`}>Your Age is:</div>
-        <div className={tw`${style.twResultText}`}>31 years, 3 months, 15 days</div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Month is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.mmwwdd}</div>
 
-        <div className={tw`${style.twResultLabel}`}>Your Age in Month is:</div>
-        <div className={tw`${style.twResultText}`}>375 months, 2 weeks, 1 days</div>
-        
-        <div className={tw`${style.twResultLabel}`}>Your Age in Week is:</div>
-        <div className={tw`${style.twResultText}`}>1632 weeks, 4 days, 11 hours</div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Week is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.wwddhh}</div>
 
-        <div className={tw`${style.twResultLabel}`}>Your Age in Days is:</div>
-        <div className={tw`${style.twResultText}`}>11428 days, 11 hours, 12 minutes</div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Days is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.ddhhmm}</div>
 
-        <div className={tw`${style.twResultLabel}`}>Your Age in Hours is:</div>
-        <div className={tw`${style.twResultText}`}>274283 hours, 12 minutes, 8 seconds</div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Hours is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.hhmmss}</div>
 
-        <div className={tw`${style.twResultLabel}`}>Your Age in Minutes is:</div>
-        <div className={tw`${style.twResultText}`}>16456992 minutes, and 8 seconds</div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Minutes is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.mmss}</div>
 
-        <div className={tw`${style.twResultLabel}`}>Your Age in Seconds is:</div>
-        <div className={tw`${style.twResultText}`}>987419528 seconds since your birth</div>
-      </div>
+          <div className={tw`${style.twResultLabel}`}>Your Age in Seconds is:</div>
+          <div className={tw`${style.twResultText}`}>{result?.ss} since your birth</div>
+        </div>
+      </div>}
 
     </>
   );
