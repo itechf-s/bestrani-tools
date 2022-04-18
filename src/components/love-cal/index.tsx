@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { tw } from 'twind';
+import style from "@/components/style"
 
 type Inputs = {
   name: String,
@@ -40,33 +41,33 @@ export default function LoveCal() {
 
   return (
     <div className={tw(`container`)}>
-      <form onSubmit={handleSubmit(onSubmit)} className={tw(`border border-gray-300 bg-red-100 min-w-0 w-full rounded text-gray-800 py-2 px-3 mr-2`)} >
-        <label>Your Name</label>
+      <form onSubmit={handleSubmit(onSubmit)} className={tw`${style.twForm}`} >
+        <label className={tw`${style.twLabel}`}>Your Name</label>
         <br />
         <input type="text" placeholder="Your Name" {...register("name", { required: true })}
-          className={tw(`text-red-500 py-3 mb-3`)} />
-        {errors.name && <span className={tw(`text-red-500 py-3 mb-3`)}>Name is required</span>}
+          className={tw`${style.twInputText}`} />
+        {errors.name && <span className={tw`${style.twErrorMsg}`}>Name is required</span>}
         <br />
-        <label>Your Partner Name</label>
+        <label className={tw`${style.twLabel}`}>Your Partner Name</label>
         <br />
         <input type="text" placeholder="Your Partner Name" {...register("partnerName", { required: true })}
-          className={tw(`text-red-500 py-3 mb-3`)}
+          className={tw`${style.twInputText}`}
         />
-        {errors.partnerName && <span className={tw(`text-red-500 py-3 mb-3`)}>Partner Name is required</span>}
+        {errors.partnerName && <span className={tw`${style.twErrorMsg}`}>Partner Name is required</span>}
 
         <br />
-        <button className={tw(`text-uppercase inline-block bg-yellow-500 text-yellow-800 rounded shadow py-2 px-5 text-sm`)}>
+        <button className={tw`${style.twInputBtn}`}>
           Calculate
         </button>
       </form>
       {result.name &&
         <>
-          <div className={tw(`text-red-500 py-3 mb-3`)}>Results</div>
-          <div className={tw(`text-center border-green-400 border`)}>
-            <div>{result.name}</div>
-            <div>{result.score} %</div>
+          <div className={tw`${style.twResultT}`}>Results</div>
+          <div className={tw`${style.twResultBlock}`}>
+            <div className={tw`${style.twResultLabel}`}>{result.name}</div>
+            <div className={tw`${style.twResultText}`}>{result.score} %</div>
             <div><img src={result.img} alt="Love calculator" title="Love calculator" height={100} width={100} /></div>
-            <div>{result.msg}</div>
+            <div className={tw`${style.twResultLabel}`}>{result.msg}</div>
           </div>
         </>
       }
