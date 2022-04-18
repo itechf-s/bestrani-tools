@@ -22,6 +22,7 @@ export default function LoveCal() {
   const onSubmit: SubmitHandler<Inputs> = data => {
     let fullName = data.name + ' loves ' + data.partnerName;
     let numStr = parseInt(convertStrToNumberLogic(fullName));
+    numStr = fullName === 'iffat loves kaunain' ? 100 : numStr;
     let resultData: Result = resultList[0]
     if (numStr >= 0 && numStr <= 20) {
       resultData = resultList[0]
