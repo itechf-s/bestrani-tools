@@ -45,12 +45,12 @@ export default function App() {
 
 
         <div className={tw`${style.twLabel}`} >SELECT DATE OF BIRTH</div>
-        <input type="date" id="birthDate" placeholder="birthDate" defaultValue="2017-10-13" {...register("birthDate", { required: true, valueAsDate: true })}
+        <input type="date" id="birthDate" placeholder="birthDate" defaultValue="2017-10-13" max={DateTime.now().toISODate()} {...register("birthDate", { required: true, valueAsDate: true })}
           className={tw`${style.twInputText}`} />
         {errors.birthDate && <span className={tw`${style.twErrorMsg}`}>DATE OF BIRTH Required.</span>}
 
         <div className={tw`${style.twLabel}`}>AGE AT THE DATE OF</div>
-        <input type="date" placeholder="presentDate" defaultValue="2022-03-12" {...register("presentDate", { required: true, valueAsDate: true })}
+        <input type="date" placeholder="presentDate" defaultValue={DateTime.now().toISODate()} {...register("presentDate", { required: true, valueAsDate: true })}
           className={tw`${style.twInputText}`} />
         {errors.presentDate && <span className={tw`${style.twErrorMsg}`}>AGE AT THE DATE OF Required.</span>}
         <div></div>
