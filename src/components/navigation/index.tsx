@@ -15,42 +15,22 @@ type Link = {
 const links = [
   {
     label: `BEAUTY`,
-    href: `/`,
-  },
-  {
-    label: `FASHION`,
-    href: `/`,
-  },
-  {
-    label: `HEALTH`,
-    href: `/`,
+    href: `/categories/beauty/`,
   },
   {
     label: `PRODUCT`,
-    href: `/`,
-  },
-  {
-    label: `Age Calculator`,
-    href: `/tools/age-calculator`,
-  },
-  {
-    label: `Love Calculator`,
-    href: `/tools/love-compatibility-calculator`,
+    href: `/categories/product/`,
   },
 ];
 
 const secondaryLinks = [
   {
-    label: `Tools`,
-    href: `/tools/ideal-body-weight-calculator`,
-  },
-  {
-    label: `Log Out`,
-    href: `/`,
-  },
-  {
     label: `Blog`,
     href: `/`,
+  },
+  {
+    label: `Tools`,
+    href: `/tools`,
   },
 ];
 
@@ -148,8 +128,9 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button modifier="border-0 mr-2"><a href="/tools/ideal-body-weight-calculator">Tools</a></Button>
-              <Button primary><a href="https://bestrani.com/">Blog</a></Button>
+
+              <Button modifier="border-0 mr-2"><a href="/tools">Tools</a></Button>
+              <Button primary><a href="/">Blog</a></Button>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>

@@ -13,7 +13,7 @@ export default function Home() {
       />
       <main>
         <IdealBodyWeight />
-        <ListSection />
+        <ListSection data={{}} />
       </main>
       <Footer />
     </Page>

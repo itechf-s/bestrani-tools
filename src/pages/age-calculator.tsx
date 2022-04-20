@@ -3,6 +3,7 @@ import Page from '@/components/page';
 import AgeCal from '@/components/age-cal';
 import ListSection from '@/components/list-section';
 import Footer from '@/components/footer';
+import content from '@/components/content/love-cal';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       />
       <main>
         <AgeCal />
-        <ListSection />
+        <ListSection data={content} />
       </main>
       <Footer />
     </Page>
