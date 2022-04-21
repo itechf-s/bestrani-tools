@@ -49,7 +49,7 @@ const home = {
   toolsList: {
     keyword: "Calculator",
     title: "A calculator is a type of software, which is used to calculate various scores and indices. The main purpose of incorporating it in many verticals is that it allows easy calculation.",
-    img: "https://uploads.sitepoint.com/wp-content/uploads/2021/09/1632727310react-calculator-app.jpg",
+    img: "https://img.bestrani.com/2022/03/calculator-imges.webp",
     listing: [
       {
         title: "Ideal Body Weight Calculator",
