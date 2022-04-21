@@ -49,7 +49,7 @@ const home = {
   toolsList: {
     keyword: "Calculator",
     title: "A calculator is a type of software, which is used to calculate various scores and indices. The main purpose of incorporating it in many verticals is that it allows easy calculation.",
-    img: "https://img.bestrani.com/2022/03/calculator-imges.webp",
+    img: "https://img.bestrani.com/2022/03/calculator-images.webp",
     listing: [
       {
         title: "Ideal Body Weight Calculator",
