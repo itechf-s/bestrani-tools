@@ -7,9 +7,8 @@ const FeatureSection = ({data}:any) => (
       <div className={tw(`container mx-auto px-6 p-6 bg-white`)}>
         <div className={tw(`mb-16 text-center`)}>
           <h4 className={tw(`text-base text-indigo-600 font-semibold tracking-wide uppercase`)}>{data.keyword}</h4>
-          <p className={tw(`tracking-tight grid grid-cols-2 flex`)}>{data.title}
-          <img src={data.img} alt={data.keyword} className={tw(`w-1/2`)} />
-          </p>
+          <div className={tw(`tracking-tight flex`)}>{data.title}</div>
+          <img src={data.img} alt={data.keyword} className={tw(`tracking-tight flex`)} />
         </div>
         <div className={tw(`flex flex-wrap my-12`)}>
 
