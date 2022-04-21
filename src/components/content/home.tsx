@@ -1,11 +1,11 @@
 
 const home = {
   content: {
-    title: "Love Calculator",
-    description: "Love Compatibility Calculator – Test Your Love Percentage",
+    title: "Love Calculator Test",
+    description: "LoveTeste",
     listItems: [
       {
-        title: `Love Compatibility Calculator – Test Your Love Percentage`,
+        title: `Love Compatibility Hello`,
         description: `Officia et fugiat mollit qui. Dolor elit aliqua voluptate ipsum
       excepteur cillum consequat consectetur duis magna qui eu consequat occaecat.
       Deserunt nisi sit.`,
@@ -22,6 +22,12 @@ const home = {
       dolore aute excepteur. Voluptate ea ullamco sunt eu elit qui aliquip.
       Adipisicing.`,
       },
+      {
+        title: `Product owners ek aur`,
+        description: `Ullamco consectetur ipsum eiusmod nisi adipisicing sint anim
+      dolore aute excepteur. Voluptate ea ullamco sunt eu elit qui aliquip.
+      Adipisicing.`,
+      },
     ]
   },
   toolsList: {
@@ -31,19 +37,19 @@ const home = {
     listing: [
       {
         title: "Ideal Body Weight Calculator",
-        desc: "The ideal body weight is the optimal weight as per the height, age, and gender of a person.",
+        desc: "Determine your ideal body weight using Body Weight Calculator by considering factors like gender, age, and height. Checkout out your ideal weight and possible risks associated with it.",
         link: "Read More",
         url: "/tools/ideal-body-weight-calculator"
       },
       {
         title: "Age Calculator",
-        desc: "This is Age Calculator ... The ideal body weight is the optimal weight as per the height, age, and gender of a person.",
+        desc: "The age calculator is used to determine the interval between the specified two days. The age calculated can be displayed in various forms (Days, months, years and weeks). This calculator is based on the most common age system.",
         link: "Read More",
         url: "/tools/age-calculator"
       },
       {
         title: "Love Compatibility Calculator",
-        desc: "This is Love Compatibility Calculator ... The ideal body weight is the optimal weight as per the height, age, and gender of a person.",
+        desc: "Prank on your friends and dear ones using this Love Calculator Prank. The results of the calculation are sent to your registered mail id. Know who has a crush on whom!!",
         link: "Read More",
         url: "/tools/love-compatibility-calculator"
       },
