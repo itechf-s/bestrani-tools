@@ -18,7 +18,7 @@ export default function Home() {
       />
       <main>
         <FeatureSection data={home.toolsList} />
-        <VideoSection />
+        <VideoSection data={home.content.video} />
         <ListSection data={home.content} />
       </main>
       <Footer />

@@ -16,14 +16,16 @@ const PlayButton = () => (
   </button>
 );
 
-const VideoSection = () => (
+const VideoSection = ({data}:any) => (
   <section className={tw(`bg-gradient-to-b from-gray-50 to-white shadow-inner`)}>
     <div className={tw(`max-w-7xl mx-auto`)}>
       <div className={tw(`flex flex-col max-w-4xl mx-auto pt-28`)}>
         <div className={tw(`w-full`)}>
           <div className={tw(`relative shadow-2xl mx-6 lg:mx-0`)}>
-            <Preferences width="100%" height="100%" />
-            <PlayButton />
+  <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {data.video}
+           
+            <div>{data.video}</div>
           </div>
         </div>
       </div>
