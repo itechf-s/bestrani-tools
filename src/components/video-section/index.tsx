@@ -1,6 +1,15 @@
 import { tw } from 'twind';
 import Preferences from '@/constants/svg/preferences.svg';
 import Play from '@/constants/svg/play.svg';
+import YouTube from 'react-youtube';
+
+const opts = {
+  width: '100%',
+  playerVars: {
+   // https://developers.google.com/youtube/player_parameters
+   autoplay: 0,
+  },
+ };
 
 const PlayButton = () => (
   <button
@@ -16,20 +25,9 @@ const PlayButton = () => (
   </button>
 );
 
-const VideoSection = ({data}:any) => (
-  <section className={tw(`bg-gradient-to-b from-gray-50 to-white shadow-inner`)}>
-    <div className={tw(`max-w-7xl mx-auto`)}>
-      <div className={tw(`flex flex-col max-w-4xl mx-auto pt-28`)}>
-        <div className={tw(`w-full`)}>
-          <div className={tw(`relative shadow-2xl mx-6 lg:mx-0`)}>
-  <iframe src="https://www.youtube.com/embed/r9jwGansp1E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          {data.video}
-           
-            <div>{data.video}</div>
-          </div>
-        </div>
-      </div>
-    </div>
+const VideoSection = ({id} : any) => (
+  <section className={tw(`mt-1 m-auto max-w-2xl`)}>
+        <YouTube videoId={id} opts={opts} className={tw(`rounded-2xl`)} />
   </section>
 );
 

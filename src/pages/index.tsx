@@ -1,15 +1,13 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
-import VideoSection from '@/components/video-section';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
-import CasesSection from '@/components/cases-section';
-import SocialProof from '@/components/social-proof';
-import PricingTable from '@/components/pricing-table';
 import Footer from '@/components/footer';
 import home from '@/components/content/home';
+import VideoSection from '@/components/video-section';
 
 export default function Home() {
+ 
   return (
     <Page>
       <NextSeo
@@ -18,7 +16,7 @@ export default function Home() {
       />
       <main>
         <FeatureSection data={home.toolsList} />
-        <VideoSection data={home.content.video} />
+        <VideoSection id={home.content.video} />
         <ListSection data={home.content} />
       </main>
       <Footer />

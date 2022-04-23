@@ -3,7 +3,7 @@ const home = {
   content: {
     title: `Calculator`,
     description: `A Small Electronic Machine Used For Calculating Figures You can do simple or advanced calculations.`,
-    video : `https://youtu.be/LCGrseQv65w`,
+    video : `LCGrseQv65w`,
     listItems: [
       {
         title: `What is Calculator`,

@@ -7,8 +7,8 @@ const FeatureSection = ({data}:any) => (
       <div className={tw(`container mx-auto px-6 p-6 bg-white`)}>
         <div className={tw(`mb-16 text-center`)}>
           <h4 className={tw(`text-base text-indigo-600 font-semibold tracking-wide uppercase`)}>{data.keyword}</h4>
-          <div className={tw(`tracking-wide text-4xl font-medium p-2 text-justify`)}>{data.title}</div>
-          <img src={data.img} alt={data.keyword} className={tw(`tracking-tight rounded-2xl flex`)} />
+          <div className={tw(`tracking-wide text-4xl font-medium p-2 bg-gradient-to-t from-gray-100 to-gray-50 rounded-2xl mt-2 mb-2`)}>{data.title}</div>
+          <img src={data.img} alt={data.keyword} className={tw(`tracking-tight rounded-2xl flex mt-2`)} />
         </div>
         <div className={tw(`flex flex-wrap my-12`)}>
           {data.listing.map(({title, desc, link, url} : any, index: any) => (
