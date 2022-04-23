@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';

@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import LoveCal from '@/components/love-cal';
 import ListSection from '@/components/list-section';
