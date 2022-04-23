@@ -88,12 +88,12 @@ const home = {
         link: `Read More`,
         url: `/tools/love-compatibility-calculator`
       },
-      {
-        title: `Ideal Body Weight Calculator`,
-        desc: `Determine your ideal body weight using Body Weight Calculator by considering factors like gender, age, and height. Checkout out your ideal weight and possible risks associated with it.`,
-        link: `Read More`,
-        url: `/tools/ideal-body-weight-calculator`
-      },
+      // {
+      //   title: `Ideal Body Weight Calculator`,
+      //   desc: `Determine your ideal body weight using Body Weight Calculator by considering factors like gender, age, and height. Checkout out your ideal weight and possible risks associated with it.`,
+      //   link: `Read More`,
+      //   url: `/tools/ideal-body-weight-calculator`
+      // },
     ]
   }
 }

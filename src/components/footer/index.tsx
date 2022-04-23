@@ -77,6 +77,7 @@ const Footer = () => (
         </ul>
       </div>
       {/* <Subscribe /> */}
+      <GoogleCode />
     </div>
     <div className={tw(`bg-white border-t border-gray-400 pt-1 text-center font-serif`)}>Copyright © 2020-2022 Bestrani. All Rights Reserved.</div>
   </footer>
@@ -99,5 +100,23 @@ const Subscribe = () => (
       </div>
 );
 
+const GoogleCode = () => (
+  <>
+    <div dangerouslySetInnerHTML={{__html: customScript}} />
+  </>
+);
+
+const customScript = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZ2N5TE95C"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-KZ2N5TE95C', { 'anonymize_ip': false });
+}
+</script>
+<script data-ad-client="ca-pub-6967029973749973" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></body>
+`
 
 export default Footer;
