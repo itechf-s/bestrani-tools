@@ -1,0 +1,19 @@
+#!/bin/bash
+serverIp=login.itechf.com
+user=ahmad
+today=$(date +%Y%m%d)
+
+src=/home/ahmad/NIDE/bestrani-tools
+dst=/tmp/
+path=tools
+
+# build project
+cd $src
+npm run build
+mv -v out $path
+tar -czf $path.tar.gz $path
+rm -fr $path
+rsync -avrt --progress $src/$path.tar.gz $user@$serverIp:$dst
+rm -fr $path.tar.gz
+cd
+echo Done!! $today
