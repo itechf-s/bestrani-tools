@@ -4,17 +4,17 @@ import LoveCal from '@/components/love-cal';
 import ListSection from '@/components/list-section';
 import Footer from '@/components/footer';
 import content from '@/components/content/love-cal';
+import MetaTags from '@/components/meta-tags';
+import QnaSection from '@/components/qna-section';
 
 export default function Home() {
   return (
     <Page>
-      <NextSeo
-        title="Bestrani the faishon Blog"
-        description="Bestrani blog in your way that includes everything you need to build amazing landing page!"
-      />
+      <MetaTags data={content} />
       <main>
         <LoveCal />
         <ListSection data={content} />
+        <QnaSection data={content} />
       </main>
       <Footer />
     </Page>
