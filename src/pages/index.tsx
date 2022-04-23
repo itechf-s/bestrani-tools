@@ -3,21 +3,21 @@ import Page from '@/components/page';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
 import Footer from '@/components/footer';
-import home from '@/components/content/home';
+import content from '@/components/content/home';
 import VideoSection from '@/components/video-section';
+import MetaTags from '@/components/meta-tags';
+import QnaSection from '@/components/qna-section';
 
 export default function Home() {
  
   return (
     <Page>
-      <NextSeo
-        title="Bestrani the faishon Blog"
-        description="Bestrani blog in your way that includes everything you need to build amazing landing page!"
-      />
+      <MetaTags data={content} />
       <main>
-        <FeatureSection data={home.toolsList} />
-        <VideoSection id={home.content.video} />
-        <ListSection data={home.content} />
+        <FeatureSection data={content} />
+        <VideoSection id={content.video} />
+        <ListSection data={content} />
+        <QnaSection data={content} />
       </main>
       <Footer />
     </Page>

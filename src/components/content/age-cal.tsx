@@ -3,12 +3,54 @@ const content = {
   meta: {
     title: `Age Calculator – Calculate Your Age In Various Stage Of Life`,
     description: `The age calculator is used to determine the interval between the specified two days. This calculator is based on the most common age system.`,
+    keyword: `Age Calculator`,
     url: `https://bestrani.com/tools/age-calculator/`,
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,
+    tags: [`age calculator`, `birth day calculator`, `date calculator`],
+    images: [`https://img.bestrani.com/2022/03/calculator-images.webp`],
+    author: `Iffat Zia`
   },
-  title: "Age Calculator",
-  description: "Age calculator is an online tool with which you can find out your age using your date of birth and the current date.",
+  breadcrumbListElements: [
+    {
+      position: 1,
+      name: 'Home',
+      item: 'https://bestrani.com',
+    },
+    {
+      position: 2,
+      name: 'Tools',
+      item: 'https://bestrani.com/tools',
+    },
+    {
+      position: 3,
+      name: 'Age Calculator',
+      item: 'https://bestrani.com/tools/age-calculator/',
+    }
+
+  ],
+  faq: {
+    title: `Frequently Asked Questions (FAQ)`,
+    description: `Here are some of the most recent questions asked by the users, which we decided to answer briefly.`,
+    faqList: [
+      {
+        questionName: `How Does An Age Calculator Work?`,
+        acceptedAnswerText: `It works on a mathematical formula, which requires input in the form of date of birth (DOB), and it will calculate the number of days based upon the configurations you have set on it.`
+      },
+      {
+        questionName: `Does the age calculator show age in hours, minutes?`,
+        acceptedAnswerText: `YES. It can calculate the number of days, minutes you have spent since you’re born on this planet and gives you exact data about it.`
+      },
+      {
+        questionName: `Can it check the age of another person?`,
+        acceptedAnswerText: `YES, you need to put the DOB information, and it will calculate the age of that person accordingly.`
+      },
+      {
+        questionName: `Can I save the information shown on the age calculator?`,
+        acceptedAnswerText: `Yes, you can get the required information in the default format. If you want to save it for later use, we recommend taking a picture of it or screenshot the desktop screen results. You can share the results directly with your friends by clicking on the share option also.`
+      }
+    ]
+  },
   listItems: [
     {
       title: `What is age calculator`,
@@ -43,29 +85,6 @@ const content = {
       description: `<p>Though the time zone doesn’t play a significant role in age calculation, this calculator can detect the user's time zone and display the required age accordingly.<p>`,
     },
   ],
-  qna:
-  {
-    title: `Frequently Asked Questions (FAQ)`,
-    description: `Here are some of the most recent questions asked by the users, which we decided to answer briefly.`,
-    qnaList: [
-      {
-        title: `How Does An Age Calculator Work?`,
-        description: `It works on a mathematical formula, which requires input in the form of date of birth (DOB), and it will calculate the number of days based upon the configurations you have set on it.`
-      },
-      {
-        title: `Does the age calculator show age in hours, minutes?`,
-        description: `YES. It can calculate the number of days, minutes you have spent since you’re born on this planet and gives you exact data about it.`
-      },
-      {
-        title: `Can it check the age of another person?`,
-        description: `YES, you need to put the DOB information, and it will calculate the age of that person accordingly.`
-      },
-      {
-        title: `Can I save the information shown on the age calculator?`,
-        description: `Yes, you can get the required information in the default format. If you want to save it for later use, we recommend taking a picture of it or screenshot the desktop screen results. You can share the results directly with your friends by clicking on the share option also.`
-      }
-    ]
-  },
 };
 
 export default content
