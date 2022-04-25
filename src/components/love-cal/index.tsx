@@ -18,7 +18,7 @@ const resultList: Result[] = [
 ]
 
 export default function LoveCal() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => {
     let fullName = data.name + ' loves ' + data.partnerName;
     let numStr = parseInt(convertStrToNumberLogic(fullName));
