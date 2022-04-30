@@ -3,12 +3,12 @@ const content = {
   meta: {
     title: `Find Love Percent Between You and Your Partner`,
     description: `Do you love someone and want to know if he or she is the special one? Do you want to check how strong your love compatibility is with your partner? Take the true love compatibility test and find how much you score on the love calculator.`,
-    keyword: `Age Calculator`,
+    keyword: `Love Calculator`,
     url: `https://bestrani.com/tools/love-compatibility-calculator/`,
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,
     tags: [`love calculator`, `funny love calculator`, `check love`, `True Love Compatibility Test`],
-    images: [`https://img.bestrani.com/2022/03/calculator-images.webp`],
+    images: [`https://img.bestrani.com/2022/03/love-compatibility-calculator.webp`],
     author: `Iffat Zia`
   },
   breadcrumbListElements: [

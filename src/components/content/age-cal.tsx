@@ -8,7 +8,7 @@ const content = {
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,
     tags: [`age calculator`, `birth day calculator`, `date calculator`],
-    images: [`https://img.bestrani.com/2022/03/calculator-images.webp`],
+    images: [`https://img.bestrani.com/2022/03/age-calculator.webp`],
     author: `Iffat Zia`
   },
   breadcrumbListElements: [

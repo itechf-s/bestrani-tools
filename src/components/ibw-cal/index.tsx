@@ -5,45 +5,51 @@ import style from "@/components/style"
 
 type Inputs = {
   gender : string,
+  system : string,
   age: String,
-  height: String
+  cms: number,
+  feet: number,
+  inch: number
 };
 
-type Result = { name: string, score: string, img: string, msg: string }
-const resultList: Result[] = [
-
-  { name: "", score: "0-20", img: "https://img.bestrani.com/2022/03/love-image-0-20.webp", msg: "If Elizabeth and Mr. Darcy of Pride and Prejudice had calculated their love compatibility, chances are they would have found themselves in this category! But love stories in 1813 were quite different from modern love stories. Compatibility of personalities and sometimes even professions is a MUST. If you do not have that with your crush or current partner, you sure will find it with a more warm soul who will be ready to accept as you are." },
-  { name: "", score: "21-50", img: "https://img.bestrani.com/2022/03/love-image-21-50.webp", msg: "Is your partner going hot and cold on you? Do you often feel like you are chasing a mirage? Probably, you are. Listen, your heart is not always right. Hormones play tricks all the time. If you both are looking for a fling, this number is good. But if you are looking for something meaningful, look for the real deal. Fix your love glasses because your person is probably right in front of your eyes" },
-  { name: "", score: "51-79", img: "https://img.bestrani.com/2022/03/love-image-51-79.webp", msg: "You may not agree on everything, but you both care for each other. Discussions are intense, so are your parting hugs. Compatibility may not be 100%, but love sure is in the air. If there’s something that is bothering you about your partner, sit down, and have a conversation. Address the issues before they get out of hand. Having healthy boundaries is good for both of you in the long run. Also, don’t forget to empathize with your partner’s difference in opinion and outlook." },
-  { name: "", score: "80-100", img: "https://img.bestrani.com/2022/03/love-image-80-100.webp", msg: "Everything else fades when you’ve found “the one.” Your love and compatibility can make the gods jealous. From your choice of food, cities to travel, music to dance to, and weird hobbies – you both mirror each other, bringing out the best of your personalities and qualities. Yes, there are occasional arguments, but you both soon find solutions and go about your day. What you have is precious (*touchwood). Nurture and preserve. Time may test your bond, but you sure will overcome it." },
-]
+type Result = { formula: string, outString: string, bmi: string }
 
 export default function IdealBodyWeight() {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => {
+    const output:Result[] = [{formula:'Peterson formula (2016)', outString:objIWC.petersonFormula(data.cms), bmi: objIWC.bmiRange(data.cms)},
+    {formula:'Miller formula (1983)', outString:objIWC.milFormula(data.gender, data.cms), bmi: objIWC.bmiRange(data.cms)},
+    {formula:'Robinson formula (1983)', outString:objIWC.robFormula(data.gender, data.cms), bmi: objIWC.bmiRange(data.cms)},
+    {formula:'Devine formula (1974)', outString:objIWC.devFormula(data.gender, data.cms), bmi: objIWC.bmiRange(data.cms)},
+    {formula:'Hamwi formula (1964)', outString:objIWC.hamFormula(data.gender, data.cms), bmi: objIWC.bmiRange(data.cms)}
+  ];
+    setResult(output);
     console.log(data.gender);
-    
   }
-  const [result, setResult] = useState<Result>({ name: "", score: "", img: "", msg: "" });
+    
+  const [result, setResult] = useState<Result[]>();
 
   return (
     <div className={tw(`container`)}>
       <form onSubmit={handleSubmit(onSubmit)} className={tw`${style.twForm}`} >
         <label className={tw`${style.twLabel}`}>Gender</label>
         <br />
-      <input {...register("gender", { required: true })} type="radio" id="male" value="Male" className={tw`${style.twRadioBtn}`} />
+      <input {...register("gender", { required: true })} type="radio" id="male" value="male" className={tw`${style.twRadioBtn}`} />
       <label htmlFor="male" className={tw`${style.twRadioLabel}`}>Male</label>
-      <input {...register("gender", { required: true })} type="radio" id="female" value="Female" className={tw`${style.twRadioBtn}`} />
+      <input {...register("gender", { required: true })} type="radio" id="female" value="female" className={tw`${style.twRadioBtn}`} />
       <label htmlFor="female" className={tw`${style.twRadioLabel}`}>Female</label>
-
+      <br />
+      {errors.gender && <span className={tw`${style.twErrorMsg}`}>Gender Required.</span>}
       <br />
         <label className={tw`${style.twLabel}`}>System</label>
         <br />
-        <input {...register("gender", { required: true })} type="radio" id="Metric" value="Metric" className={tw`${style.twRadioBtn}`} />
-      <label htmlFor="Metric" className={tw`${style.twRadioLabel}`}>Metric</label>
-      <input {...register("gender", { required: true })} type="radio" id="Imperial" value="Imperial" className={tw`${style.twRadioBtn}`} />
-      <label htmlFor="Imperial" className={tw`${style.twRadioLabel}`}>Imperial</label>
-
+        <input {...register("system", { required: true })} type="radio" id="Metric" value="Metric" className={tw`${style.twRadioBtn}`} />
+      <label htmlFor="Metric" className={tw`${style.twRadioLabel}`}>Metric (cms)</label>
+      <br />
+      <input {...register("system", { required: true })} type="radio" id="Imperial" value="Imperial" className={tw`${style.twRadioBtn}`} />
+      <label htmlFor="Imperial" className={tw`${style.twRadioLabel}`}>Imperial (feet/inches)</label>
+      <br />
+      {errors.system && <span className={tw`${style.twErrorMsg}`}>System Required.</span>}
         <br />
         <label className={tw`${style.twLabel}`}>Age</label>
         <br />
@@ -53,24 +59,40 @@ export default function IdealBodyWeight() {
         <br />
         <label className={tw`${style.twLabel}`}>Your Height</label>
         <br />
-        <input type="text" placeholder="Your Height in Cms" {...register("height", { required: true })}
+        <input type="text" placeholder="Your Height in Cms" {...register("cms", { required: true })}
           className={tw`${style.twInputText}`}
         />
-        {errors.height && <span className={tw`${style.twErrorMsg}`}>Height is required</span>}
+        {errors.cms && <span className={tw`${style.twErrorMsg}`}>Height is required</span>}
 
         <br />
         <button className={tw`${style.twInputBtn}`}>
           Calculate
         </button>
       </form>
-      {result.name &&
+      {result &&
         <>
-          <div className={tw`${style.twResultT}`}>Results</div>
+          <div className={tw`${style.twResultT}`}>Results {result[0].outString}</div>
+          <div className={tw`${style.twResultT}`}>Results {result[0].bmi}</div>
           <div className={tw`${style.twResultBlock}`}>
-            <div className={tw`${style.twResultLabel}`}>{result.name}</div>
-            <div className={tw`${style.twResultText}`}>{result.score} %</div>
-            <div><img src={result.img} alt="Love calculator" title="Love calculator" height={100} width={100} /></div>
-            <div className={tw`${style.twResultLabel}`}>{result.msg}</div>
+            <div className={tw`${style.twLabel}`}>Your ideal weight according to:</div>
+            {result.map(({formula, outString, bmi  }, index: number) => (
+<>
+<div className={tw`${style.twResultLabel}`}>{formula} </div>
+<div className={tw`${style.twResultText}`}>{outString}</div>
+</>
+            )
+            
+            )}
+            <div className={tw`${style.twResultLabel}`}>Miller formula (1983) </div>
+            <div className={tw`${style.twResultText}`}>70.3Kgs/155.0 Pounds</div>
+            <div className={tw`${style.twResultLabel}`}>Robinson formula (1983) </div>
+            <div className={tw`${style.twResultText}`}>71.0Kgs/156.6 Pounds</div>
+            <div className={tw`${style.twResultLabel}`}>Devine formula (1974) </div>
+            <div className={tw`${style.twResultText}`}>73.0Kgs/161.0 Pounds</div>
+            <div className={tw`${style.twResultLabel}`}>Hamwi formula (1964) </div>
+            <div className={tw`${style.twResultText}`}>75.0Kgs/165.4 Pounds</div>
+            <div className={tw`${style.twLabel}`}>Healthy BMI Range:</div>
+            <div className={tw`${style.twResultText}`}>{result[0].bmi} Kgs</div>
           </div>
         </>
       }
@@ -78,37 +100,57 @@ export default function IdealBodyWeight() {
   );
 }
 
-
-function convertStrToNumberLogic(str: String) {
-  str = str.replace(/ /g, '').toLowerCase();
-  var i = 0;
-  var num = '';
-  while (str.length) {
-    var c = str.charAt(i);
-    var pattern = new RegExp(c, 'g');
-    num += str.split(c).length - 1;
-    str = str.replace(pattern, '');
-  }
-  var per = calculateLovePercentage(num);
-  return per;
-}
-function calculateLovePercentage(str: String) {
-  var per = '';
-  while (str.length) {
-    if (str.length == 1) {
-      var f = str.charAt(0);
-      per += f;
-      str = '';
+const objIWC = {
+  bmiRange: function (cms: any) {
+    const height = cms / 100,
+      w1 = 18.5 * Math.pow(height, 2),
+      w2 = 25 * Math.pow(height, 2);
+    const res = (w1.toFixed(1) + ' - ' + w2.toFixed(1));
+    return res;
+  },
+  petersonFormula: function (cms:number) {
+    const height = cms / 100,
+      weight = 2.2 * 22 + 3.5 * 22 * (height - 1.5),
+      pound = weight * 2.205;
+    const res = weight.toFixed(1) + 'Kgs' + pound.toFixed(1) + 'Pounds';
+    return res;
+  },
+  mCalc: function (gender: string, cms: number, mW: number, fW: number, mPW: number, fPW: number) {
+    var weight, finalVal;
+      finalVal = cms / 2.54 - 60;
+    if (gender == 'male') {
+      weight = mW + mPW * finalVal;
     } else {
-      var f = str.charAt(0);
-      var l = str.charAt(str.length - 1);
-      per += +f + +l;
-      var position = 1;
-      str = str.substring(0, position - 1) + str.substring(position, str.length);
-      position = str.length;
-      str = str.substring(0, position - 1) + str.substring(position, str.length);
+      weight = fW + fPW * finalVal;
     }
+    return weight.toFixed(1);
+  },
+  hamFormula: function (gender: string, cms: number) {
+    var weight:any = objIWC.mCalc(gender, cms, 48, 45.5, 2.7, 2.2);
+    var pound:number = weight * 2.205;
+    const res = weight + 'Kgs' + pound.toFixed(1) + 'Pounds';
+    return res;
+  },
+  devFormula: function (gender: string, cms: number) {
+    var weight:any = objIWC.mCalc(gender, cms, 50, 45.5, 2.3, 2.3),
+      pound = weight * 2.205;
+    const res = weight + 'Kgs' + pound.toFixed(1) + 'Pounds';
+    return res;
+  },
+  robFormula: function (gender: string, cms: number) {
+    var weight:any = objIWC.mCalc(gender, cms, 52, 49, 1.9, 1.7),
+      pound = weight * 2.205;
+    const res = weight + 'Kgs' + pound.toFixed(1) + 'Pounds';
+    return res;
+  },
+  milFormula: function (gender: string, cms: number) {
+    var weight:any = objIWC.mCalc(gender, cms, 56.2, 53.1, 1.41, 1.36),
+      pound = weight * 2.205;
+    const res = weight + 'Kgs' + pound.toFixed(1) + 'Pounds';
+    return res;
   }
-  if (per.length > 2) per = calculateLovePercentage(per);
-  return per;
+};
+
+function index(arg0: { formula: any; outString: any; bmi: any; }, index: any): React.ReactNode {
+  throw new Error("Function not implemented.");
 }
