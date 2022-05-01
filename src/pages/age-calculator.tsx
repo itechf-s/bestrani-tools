@@ -6,7 +6,7 @@ import content from '@/components/content/age-cal';
 import MetaTags from '@/components/meta-tags';
 import QnaSection from '@/components/qna-section';
 
-export default function Home() {
+export default function AgeHome() {
   return (
     <Page>
       <MetaTags data={content} />
