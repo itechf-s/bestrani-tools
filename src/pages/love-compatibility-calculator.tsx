@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import content from '@/components/content/love-cal';
 import MetaTags from '@/components/meta-tags';
 import QnaSection from '@/components/qna-section';
+import RelatedSection from '@/components/related-section';
 
 export default function LoveCalHome() {
   return (
@@ -12,6 +13,7 @@ export default function LoveCalHome() {
       <MetaTags data={content} />
       <main>
         <LoveCal />
+        <RelatedSection />
         <ListSection data={content} />
         <QnaSection data={content} />
       </main>

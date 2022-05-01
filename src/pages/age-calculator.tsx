@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import content from '@/components/content/age-cal';
 import MetaTags from '@/components/meta-tags';
 import QnaSection from '@/components/qna-section';
+import RelatedSection from '@/components/related-section';
 
 export default function AgeHome() {
   return (
@@ -12,6 +13,7 @@ export default function AgeHome() {
       <MetaTags data={content} />
       <main>
         <AgeCal />
+        <RelatedSection />
         <ListSection data={content} />
         <QnaSection data={content} />
       </main>
