@@ -53,13 +53,13 @@ export default function IdealBodyWeight() {
         <br />
         <label className={tw`${style.twLabel}`}>Age</label>
         <br />
-        <input type="number" placeholder="Your Age 2-85" min={2} max={85} value={21} {...register("age", { required: true })}
+        <input type="number" placeholder="Your Age 2-85" min={2} max={85} {...register("age", { required: true, value: "24" })}
           className={tw`${style.twInputText}`} />
         {errors.age && <span className={tw`${style.twErrorMsg}`}>Age is required</span>}
         <br />
         <label className={tw`${style.twLabel}`}>Your Height</label>
         <br />
-        <input type="number" placeholder="Your Height in Cms" min={61} max={200} value={175} {...register("cms", { required: true, max: 200 })}
+        <input type="number" placeholder="Your Height in Cms" min={61} max={200} {...register("cms", { required: true, max: 200, value : 170 })}
           className={tw`${style.twInputText}`}
         />
         {errors.cms && <span className={tw`${style.twErrorMsg}`}>Height is required</span>}
