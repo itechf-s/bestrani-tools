@@ -95,7 +95,12 @@ const content = {
       <p>After entering all the required input, click on “Calculate” to view the result</p>
       <p><b>Output Shown:</b> The result section displays the person’s ideal body weight according to the Robinson, Miller, Devine and Hamwi formulas, and the healthy BMI range, respectively, based on the inputs provided.</p>`,
     },
-  ]
+  ],
+  embed:{
+    title: `Embed Code`,
+    description: `To embed this on to your site just copy and paste the below code`,
+    code:`<iframe id="ibw-cal" width=" 500" height="555" allowtransparency="true" src="<<url>>" frameborder="0" allowfullscreen=""></iframe>`
+  }
 };
 
 export default content

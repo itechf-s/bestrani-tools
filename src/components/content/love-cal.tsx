@@ -52,7 +52,12 @@ const content = {
       title: `True Love Compatibility Test`,
       description: `Are you in love? Do you want to know whether your partner is your soulmate or not? If you are confused about love and want to take a true love compatibility test with your partner, then mPanchang’s love meter is the best option you can go for. This true love compatibility calculator calculates your love percentage by name and date of birth and resolves all your doubts that you have about your relationship. Even if you two are madly in love, tapping on this love meter is fun. So, enter your name and birth details and find what this real love calculator says about your connection.`,
     }
-  ]
+  ],
+  embed:{
+    title: `Embed Code`,
+    description: `To embed this on to your site just copy and paste the below code`,
+    code:`<iframe id="love-cal" width=" 500" height="555" allowtransparency="true" src="<<url>>" frameborder="0" allowfullscreen=""></iframe>`
+  }
 };
 
 export default content

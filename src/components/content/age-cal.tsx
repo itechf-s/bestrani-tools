@@ -85,6 +85,11 @@ const content = {
       description: `<p>Though the time zone doesn’t play a significant role in age calculation, this calculator can detect the user's time zone and display the required age accordingly.<p>`,
     },
   ],
+  embed:{
+    title: `Embed Code`,
+    description: `To embed this on to your site just copy and paste the below code`,
+    code:`<iframe id="age-cal" width=" 500" height="555" allowtransparency="true" src="<<url>>" frameborder="0" allowfullscreen=""></iframe>`
+  }
 };
 
 export default content
