@@ -15,5 +15,7 @@ tar -czf $path.tar.gz $path
 rm -fr $path
 rsync -avrt --progress $src/$path.tar.gz $user@$serverIp:$dst
 rm -fr $path.tar.gz
+#Deploy on Server
+ssh ahmad@login.itechf.com /home/ahmad/script/deployTools bestrani com
 cd
 echo Done!! $today
