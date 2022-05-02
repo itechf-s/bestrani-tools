@@ -90,8 +90,8 @@ export default function IdealBodyWeight() {
             <div className={tw`${style.twResultText}`}>73.0Kgs/161.0 Pounds</div>
             <div className={tw`${style.twResultLabel}`}>Hamwi formula (1964) </div>
             <div className={tw`${style.twResultText}`}>75.0Kgs/165.4 Pounds</div> */}
-            <div className={tw`${style.twLabel}`}>Healthy BMI Range:</div>
-            <div className={tw`${style.twResultText}`}>{result[0].bmi} Kgs</div>
+            <div className={tw`${style.twResultLabel}`}>Healthy BMI Range:</div>
+            <div className={tw`${style.twResultBoldText}`}>{result[0].bmi} Kgs</div>
           </div>
         </>
       }

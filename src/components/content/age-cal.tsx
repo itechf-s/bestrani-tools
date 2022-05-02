@@ -88,7 +88,7 @@ const content = {
   embed:{
     title: `Embed Code`,
     description: `To embed this on to your site just copy and paste the below code`,
-    code:`<iframe id="age-cal" width=" 500" height="555" allowtransparency="true" src="<<url>>" frameborder="0" allowfullscreen=""></iframe>`
+    code:`<iframe id="age-cal" width=" 500" height="870" src="<<url>>" frameborder="0" allowfullscreen></iframe>`
   }
 };
 
