@@ -94,6 +94,12 @@ const home = {
         link: `Read More`,
         url: `/tools/ideal-body-weight-calculator`
       },
+      {
+        title: `Water Intake Calculator`,
+        desc: `How Much Water Should I Drink? Find out how much amount of water that you need to consume based on your exercise time and your body weight using the Water Intake Calculator.`,
+        link: `Read More`,
+        url: `/tools/water-intake-calculator`
+      },
     ]
   }
 }
