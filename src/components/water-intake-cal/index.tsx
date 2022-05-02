@@ -43,11 +43,13 @@ export default function WaterIntake() {
         <>
           <div className={tw`${style.twResultT}`}>Results</div>
           <div className={tw`${style.twResultBlock}`}>
-            <div className={tw`${style.twLabel}`}>Daily Water Intake</div>
+            <div className={tw`${style.twResultXLText}`}>Daily Water Intake</div>
             
-            <div className={tw`${style.twResultText}`}>{result.litres} Litres or</div>
-            <div className={tw`${style.twResultText}`}>{result.ounces} Ounces or</div>
-            <div className={tw`${style.twResultText}`}>{result.cups} Cups</div>
+            <div className={tw`${style.twResultBoldText}`}>{result.litres} Litres</div>
+            <div className={tw`${style.twResultT}`}>OR</div>
+            <div className={tw`${style.twResultBoldText}`}>{result.ounces} Ounces</div>
+            <div className={tw`${style.twResultT}`}>OR</div>
+            <div className={tw`${style.twResultBoldText}`}>{result.cups} Cups</div>
           </div>
         </>
       }
@@ -55,25 +57,32 @@ export default function WaterIntake() {
   );
 }
 
-const process = (wgt: string, exercise: string) => {
-  let ounces,
-    cups,
+function conv_wgt_punds(wtg_set:string) {
+  return Math.round(parseFloat(wtg_set) * (2.20462));
+}
+function conv_wgt_kgs(wtg_set: string) {
+  return Math.round(parseFloat(wtg_set) * (0.453592));
+}
+function process(weight_kg:any, exercise:any ) {
+  
+  var ounces,
+    cups = '',
     liters,
-    wgt_ous,
+    wgt,
     workout_cal,
     tot_ounces;
-  wgt_ous = parseFloat(wgt) * 2.20462
-  console.log('kg to ous ' + wgt_ous);
+    wgt = conv_wgt_punds(weight_kg);
+  
+  console.log(wgt);
   console.log(exercise);
-  
-  
-  ounces = Math.round(wgt_ous * (2.0 / 3.0));
+  ounces = Math.round(wgt * (2 / 3));
   console.log(ounces);
   workout_cal = (parseFloat(exercise) / (30.0 * 12.0));
   console.log(workout_cal);
-  tot_ounces = Math.round(ounces + workout_cal);
+  tot_ounces = (ounces + workout_cal);
   liters = (tot_ounces * 0.0295735).toFixed(2);
   cups = (tot_ounces * 0.125).toFixed(2);
-  const output: Result = { litres: liters , ounces:  tot_ounces.toString(), cups : cups};
-  return output;
+  console.log(tot_ounces);
+  const output:Result = {litres:liters, ounces:tot_ounces.toFixed(2), cups:cups}
+  return output
 }
