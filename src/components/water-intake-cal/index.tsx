@@ -29,7 +29,7 @@ export default function WaterIntake() {
         <br />
         <label className={tw`${style.twLabel}`}>Minutes of Exercise Daily</label>
         <br />
-        <input type="number" placeholder="Minutes of Exercise Daily" max={300} {...register("exercise", { required: true, value : "0" })}
+        <input type="number" placeholder="Minutes of Exercise Daily" max={300} {...register("exercise", { required: true, value: "0" })}
           className={tw`${style.twInputText}`}
         />
         {errors.exercise && <span className={tw`${style.twErrorMsg}`}>Exercise is required</span>}
@@ -44,7 +44,7 @@ export default function WaterIntake() {
           <div className={tw`${style.twResultT}`}>Results</div>
           <div className={tw`${style.twResultBlock}`}>
             <div className={tw`${style.twResultXLText}`}>Daily Water Intake</div>
-            
+
             <div className={tw`${style.twResultBoldText}`}>{result.litres} Litres</div>
             <div className={tw`${style.twResultT}`}>OR</div>
             <div className={tw`${style.twResultBoldText}`}>{result.ounces} Ounces</div>
@@ -57,32 +57,26 @@ export default function WaterIntake() {
   );
 }
 
-function conv_wgt_punds(wtg_set:string) {
+function conv_wgt_punds(wtg_set: string) {
   return Math.round(parseFloat(wtg_set) * (2.20462));
 }
 function conv_wgt_kgs(wtg_set: string) {
   return Math.round(parseFloat(wtg_set) * (0.453592));
 }
-function process(weight_kg:any, exercise:any ) {
-  
+function process(weight_kg: string, exercise: string) {
+
   var ounces,
     cups = '',
     liters,
     wgt,
     workout_cal,
     tot_ounces;
-    wgt = conv_wgt_punds(weight_kg);
-  
-  console.log(wgt);
-  console.log(exercise);
-  ounces = Math.round(wgt * (2 / 3));
-  console.log(ounces);
-  workout_cal = (parseFloat(exercise) / (30.0 * 12.0));
-  console.log(workout_cal);
-  tot_ounces = (ounces + workout_cal);
+  wgt = conv_wgt_punds(weight_kg);
+  ounces = Math.round(wgt * (2.0 / 3.0))
+  workout_cal = (parseFloat(exercise) / 30.0 * 12.0);
+  tot_ounces = Math.round((ounces + workout_cal));
   liters = (tot_ounces * 0.0295735).toFixed(2);
   cups = (tot_ounces * 0.125).toFixed(2);
-  console.log(tot_ounces);
-  const output:Result = {litres:liters, ounces:tot_ounces.toFixed(2), cups:cups}
+  const output: Result = { litres: liters, ounces: tot_ounces.toFixed(2), cups: cups }
   return output
 }
