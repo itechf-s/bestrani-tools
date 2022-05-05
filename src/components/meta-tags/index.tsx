@@ -11,7 +11,15 @@ const MetaTags = ({ data }: any) => {
         openGraph={
           {
             type: 'article',
-            article: { modifiedTime: data.meta.modified_time, publishedTime: data.meta.published_time, tags: data.meta.tags }
+            article: { modifiedTime: data.meta.modified_time, publishedTime: data.meta.published_time, tags: data.meta.tags },
+            images : [
+              {
+                url: data.meta.images[0],
+                width: 1200,
+                height: 680,
+                alt: data.meta.title,
+              },
+            ]
           }
         }
       />
