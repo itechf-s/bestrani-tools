@@ -33,7 +33,7 @@ const home = {
       },
     ]
   },
-  video: `LCGrseQv65w`,
+  video: `yEwMoVfaUS4`,
   listItems: [
     {
       title: `What is Calculator`,
