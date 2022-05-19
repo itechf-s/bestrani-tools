@@ -4,7 +4,7 @@ const content = {
     title: `Proteen Age Calculator – Calculate Your Age In Various Stage Of Life`,
     description: `The age calculator is used to determine the interval between the specified two days. This calculator is based on the most common age system.`,
     keyword: `protein-intake-calculator Calculator`,
-    url: `https://bestrani.com/tools/age-calculator/`,
+    url: `https://bestrani.com/tools/protein-intake-calculator/`,
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,
     tags: [`age calculator`, `birth day calculator`, `date calculator`],
@@ -25,7 +25,7 @@ const content = {
     {
       position: 3,
       name: 'Age Calculator',
-      item: 'https://bestrani.com/tools/age-calculator/',
+      item: 'https://bestrani.com/tools/protein-intake-calculator/',
     }
 
   ],

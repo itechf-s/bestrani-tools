@@ -7,8 +7,12 @@ import { DateTime } from 'luxon';
 
 
 type Inputs = {
-  birthDate: Date,
-  presentDate: Date
+  gender: string,
+  system: string,
+  age: String,
+  cms: number,
+  feet: number,
+  inch: number
 };
 
 type Result = {
@@ -48,17 +52,27 @@ export default function App() {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={tw`${style.twForm}`}>
 
+      <label className={tw`${style.twLabel}`}>Gender</label>
+        <br />
+        <input checked {...register("gender", { required: true })} type="radio" id="male" value="male" className={tw`${style.twRadioBtn}`} />
+        <label htmlFor="male" className={tw`${style.twRadioLabel}`}>Male</label>
+        <input {...register("gender", { required: true })} type="radio" id="female" value="female" className={tw`${style.twRadioBtn}`} />
+        <label htmlFor="female" className={tw`${style.twRadioLabel}`}>Female</label>
+        <br />
+        {errors.gender && <span className={tw`${style.twErrorMsg}`}>Gender Required.</span>}
+        <br />
+        <label className={tw`${style.twLabel}`}>System</label>
+        <br />
+        <input checked {...register("system", { required: true })} type="radio" id="Metric" value="Metric" className={tw`${style.twRadioBtn}`} />
+        <label htmlFor="Metric" className={tw`${style.twRadioLabel}`}>Metric (cms)</label>
+        <br />
+        <input disabled {...register("system", { required: true })} type="radio" id="Imperial" value="Imperial" className={tw`${style.twRadioBtn}`} />
+        <label htmlFor="Imperial" className={tw`${style.twRadioLabel}`}>Imperial (feet/inches)</label>
+        <br />
+        {errors.system && <span className={tw`${style.twErrorMsg}`}>System Required.</span>}
+        <br />
 
-        <div className={tw`${style.twLabel}`} >SELECT DATE OF BIRTH</div>
-        <input type="date" id="birthDate" pattern="\d{4}-\d{2}-\d{2}" placeholder="birthDate" defaultValue="2017-10-13" max={DateTime.now().toISODate()} {...register("birthDate", { required: true, valueAsDate: true })}
-          className={tw`${style.twInputText}`} />
-        {errors.birthDate && <span className={tw`${style.twErrorMsg}`}>DATE OF BIRTH Required.</span>}
-
-        <div className={tw`${style.twLabel}`}>AGE AT THE DATE OF</div>
-        <input type="date" placeholder="presentDate" defaultValue={DateTime.now().toISODate()} {...register("presentDate", { required: true, valueAsDate: true })}
-          className={tw`${style.twInputText}`} />
-        {errors.presentDate && <span className={tw`${style.twErrorMsg}`}>AGE AT THE DATE OF Required.</span>}
-        <div></div>
+       
         <input type="submit" value="Calculate" className={tw`${style.twInputBtn}`} />
 
       </form>

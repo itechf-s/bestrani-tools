@@ -100,6 +100,12 @@ const home = {
         link: `Read More`,
         url: `/tools/water-intake-calculator`
       },
+      {
+        title: `protein-intake-calculator Water Intake Calculator`,
+        desc: `protein-intake-calculator How Much Water Should I Drink? Find out how much amount of water that you need to consume based on your exercise time and your body weight using the Water Intake Calculator.`,
+        link: `Read More`,
+        url: `/tools/protein-intake-calculator`
+      },
     ]
   }
 }
