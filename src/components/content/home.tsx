@@ -101,8 +101,8 @@ const home = {
         url: `/tools/water-intake-calculator`
       },
       {
-        title: `protein-intake-calculator Water Intake Calculator`,
-        desc: `protein-intake-calculator How Much Water Should I Drink? Find out how much amount of water that you need to consume based on your exercise time and your body weight using the Water Intake Calculator.`,
+        title: `Protein Intake Calculator`,
+        desc: `Protein is an important nutrient for bodily functions. This calculator helps to determine your total protein intake as per your calorie requirement, age, and physical activity which is important to meet the demand and help to regulate satiety level.`,
         link: `Read More`,
         url: `/tools/protein-intake-calculator`
       },
