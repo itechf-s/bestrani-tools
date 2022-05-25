@@ -20,4 +20,4 @@ function processForm() {
 	document.getElementById("result").style.display = 'block';
 	document.getElementById("result").innerHTML = '<h2>Result<div class="bac-container"><p>Protein per day : <span>'+ protein_intake +' grams';
    
-  
+	<select class="form-control" name="age" id="sel1"><option value="1.2" selected="">Sedentary: little or no exercise</option><option value="1.375">Light: exercise 1-3 times/week</option><option value="1.465">Moderate: exercise 4-5 times/week</option><option value="1.55">Active: daily exercise or intense exercise 3-4 times/week</option><option value="1.725">Very Active: intense exercise 6-7 times/week</option><option value="1.9">Extra Active: very intense exercise daily, or physical job</option></select>
