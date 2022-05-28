@@ -46,19 +46,19 @@ export default function IdealBodyWeight() {
         <br />
         <label className={tw`${style.twLabel}`}>Enter Your Weight</label>
         <br />
-        <input type="number" placeholder="Your weight 2-85" min={2} max={85} {...register("weight", { required: true, value: "24" })}
+        <input type="number" placeholder="Your weight" min={2} max={155} {...register("weight", { required: true, value: 40 })}
           className={tw`${style.twInputText}`} />
         {errors.weight && <span className={tw`${style.twErrorMsg}`}>Weight is required</span>}
         <br />
         <label className={tw`${style.twLabel}`}>Physical Activity</label>
         <br />
         <select {...register("activity", { required: true })} className={tw`${style.twInputText}`}>
-      <option value="1.2" defaultValue="1.2" >Sedentary: little or no exercise</option>
-      <option value="1.375">Light: exercise 1-3 times/week</option>
-      <option value="1.465">Moderate: exercise 4-5 times/week</option>
-      <option value="1.55">Active: daily exercise or intense exercise 3-4 times/week</option>
-      <option value="1.725">Very Active: intense exercise 6-7 times/week</option>
-      <option value="1.9">Extra Active: very intense exercise daily, or physical job</option>
+      <option value={1.2} defaultValue={1.2} >Sedentary: little or no exercise</option>
+      <option value={1.375}>Light: exercise 1-3 times/week</option>
+      <option value={1.465}>Moderate: exercise 4-5 times/week</option>
+      <option value={1.55}>Active: daily exercise or intense exercise 3-4 times/week</option>
+      <option value={1.725}>Very Active: intense exercise 6-7 times/week</option>
+      <option value={1.9}>Extra Active: very intense exercise daily, or physical job</option>
       </select>
 
         {errors.weight && <span className={tw`${style.twErrorMsg}`}>Please select Physical Activity</span>}
