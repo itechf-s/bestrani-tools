@@ -53,7 +53,7 @@ export default function IdealBodyWeight() {
         <label className={tw`${style.twLabel}`}>Physical Activity</label>
         <br />
         <select {...register("activity", { required: true })} className={tw`${style.twInputText}`}>
-      <option value="1.2" selected>Sedentary: little or no exercise</option>
+      <option value="1.2" defaultValue="1.2" >Sedentary: little or no exercise</option>
       <option value="1.375">Light: exercise 1-3 times/week</option>
       <option value="1.465">Moderate: exercise 4-5 times/week</option>
       <option value="1.55">Active: daily exercise or intense exercise 3-4 times/week</option>
