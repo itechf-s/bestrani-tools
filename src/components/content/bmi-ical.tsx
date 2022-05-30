@@ -4,7 +4,7 @@ const content = {
     title: `Protein Calculator – How To Calculate Protein Intake`,
     description: `This Free Protein Calculator Estimates The Amount Of Protein A Person Needs Each Day To Remain Healthy Based On Certain Averages And Recommendations.`,
     keyword: `Daily Protein Intake Calculator`,
-    url: `https://bestrani.com/tools/body-mass-index-calculator/`,
+    url: `https://bestrani.com/tools/protein-intake-calculator/`,
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,
     tags: [`Protein Calculator`, `Protein Calculator In Food`, `Protein Calculator For Weight Loss`,`Daily Protein Intake Calculator`],
@@ -25,7 +25,7 @@ const content = {
     {
       position: 3,
       name: 'Age Calculator',
-      item: 'https://bestrani.com/tools/body-mass-index-calculator/',
+      item: 'https://bestrani.com/tools/protein-intake-calculator/',
     }
 
   ],

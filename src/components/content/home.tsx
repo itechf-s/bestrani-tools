@@ -106,6 +106,14 @@ const home = {
         link: `Read More`,
         url: `/tools/protein-intake-calculator`
       },
+
+      {
+        title: `Body Mass Index Calculator`,
+        desc: `The Body Mass Index (BMI) measures the weight status of your body in relation to the fat. It is a simple tool that helps to figure out the amount of excess body fat and the associated risks of carrying this extra weight. It can be applied to both men and women. It is advisable to use ‘Body Mass Index’ along with ‘Waist to Hip Ratio’ to get a complete picture of your weight status.`,
+        link: `Read More`,
+        url: `/tools/body-mass-index-calculator`
+      },
+
     ]
   }
 }
