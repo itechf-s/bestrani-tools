@@ -1,8 +1,8 @@
 import Page from '@/components/page';
-import ProteinCal from '@/components/protein-cal';
+import BmiCal from '@/components/bmi-cal';
 import ListSection from '@/components/list-section';
 import Footer from '@/components/footer';
-import content from '@/components/content/protein-ical';
+import content from '@/components/content/bmi-ical';
 import MetaTags from '@/components/meta-tags';
 import QnaSection from '@/components/qna-section';
 import RelatedSection from '@/components/related-section';
@@ -19,7 +19,7 @@ export default function AgeHome() {
         <MetaTags data={content} />
         <main>
           <TitleSection data={content} />
-          <ProteinCal />
+          <BmiCal />
         </main>
       </div>
     );
@@ -29,7 +29,7 @@ export default function AgeHome() {
         <MetaTags data={content} />
         <main>
           <TitleSection data={content} />
-          <ProteinCal />
+          <BmiCal />
           <RelatedSection />
           <EmbedSection data={content} />
           <ListSection data={content} />
