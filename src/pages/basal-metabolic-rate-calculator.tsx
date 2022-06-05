@@ -1,8 +1,8 @@
 import Page from '@/components/page';
-import IdealBodyWeight from '@/components/ibw-cal';
+import BasalMetabolicRate from '@/components/bmr-cal';
 import ListSection from '@/components/list-section';
 import Footer from '@/components/footer';
-import content from '@/components/content/ibw-cal';
+import content from '@/components/content/bmr-cal';
 import QnaSection from '@/components/qna-section';
 import MetaTags from '@/components/meta-tags';
 import RelatedSection from '@/components/related-section';
@@ -19,7 +19,7 @@ export default function BMRCalHome() {
         <MetaTags data={content} />
         <main>
           <TitleSection data={content} />
-          <IdealBodyWeight />
+          <BasalMetabolicRate />
         </main>
       </div>
     );
@@ -29,7 +29,7 @@ export default function BMRCalHome() {
         <MetaTags data={content} />
         <main>
           <TitleSection data={content} />
-          <IdealBodyWeight />
+          <BasalMetabolicRate />
           <RelatedSection />
           <EmbedSection data={content} />
           <ListSection data={content} />

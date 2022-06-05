@@ -2,7 +2,7 @@ import Page from '@/components/page';
 import BmiCal from '@/components/bmi-cal';
 import ListSection from '@/components/list-section';
 import Footer from '@/components/footer';
-import content from '@/components/content/bmi-ical';
+import content from '@/components/content/bmi-cal';
 import MetaTags from '@/components/meta-tags';
 import QnaSection from '@/components/qna-section';
 import RelatedSection from '@/components/related-section';

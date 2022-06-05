@@ -114,6 +114,13 @@ const home = {
         url: `/tools/body-mass-index-calculator`
       },
 
+      {
+        title: `Basal Metabolic Rate Calculator`,
+        desc: ` Calculate your Basal Metabolic Rate (BMR) and your daily calorie requirements with this useful calculator tool. Your BMR is the minimum amount of energy the body requires to function. Calories are a unit of energy.`,
+        link: `Read More`,
+        url: `/tools/basal-metabolic-rate-calculator`
+      },
+
     ]
   }
 }
