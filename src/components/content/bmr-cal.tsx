@@ -1,8 +1,8 @@
 
 const content = {
   meta: {
-    title: `BMI Calculator – Check Your Body Mass Index For Women & Men`,
-    description: `Body mass index (BMI) is a calculation that uses height and weight to estimate how much body fat someone has.Calculate your body mass index with our metric and imperial BMI calculator tool for both men and women.`,
+    title: `Basal Metabolic Rate BMR Calculator To Count Minimum Calories`,
+    description: `Basal Metabolic Rate (BMR) is an effective tool to measure your minimum energy expenditure while you are resting. Your BMR determines the minimum calories youe body needs to accomplish basic functions.`,
     keyword: `Basal Metabolic Rate Calculator `,
     url: `https://bestrani.com/tools/body-mass-index-calculator/`,
     published_time: `2022-04-24T08:30:00+05:30`,
@@ -34,147 +34,71 @@ const content = {
     description: `Here are some of the most recent questions asked by the users, which we decided to answer briefly.`,
     faqList: [
       {
-        questionName: `How do you calculate BMI for males and females? `,
-        acceptedAnswerText: `<p>Body Mass Index is a simple calculation using a person's height and weight. The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared. A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9. BMI applies to most adults 18-65 years.</p>`
+        questionName: `How do I calculate my basal metabolic rate? `,
+        acceptedAnswerText: `<p>Your basal metabolism rate is produced through the following basal metablic rate formula: Men: BMR = 88.362 + (13.397 x weight in kg) + (4.799 x height in cm) – (5.677 x age in years) Women: BMR = 447.593 + (9.247 x weight in kg) + (3.098 x height in cm) – (4.330 x age in years).</p>`
       },
       {
-        questionName: `What is the normal male and female BMI range?`,
-        acceptedAnswerText: `<p>Broadly speaking, irrespective of whether you are male or female, a BMI in the range of 18.5 to 24.9 is considered normal.</p>`
+        questionName: `What is a good basal metabolic rate?`,
+        acceptedAnswerText: `<p>Your BMR score is a number which refers to how many calories you burn at rest. Most people's BMR is between 1000 – 2000. This means that they need to take in between 1000 – 2000 calories each day to fuel their basic functions while in a resting state.</p>`
       },
       {
-        questionName: `How is BMI calculated?`,
-        acceptedAnswerText: `BMI is calculated using only the variables of weight and height. Your BMI is equal to your weight in kilograms divided by your height in metres squared. You can also calculate your BMI using imperial units, in which case your BMI is equal to your weight in pounds divided by your height in inches squared, multiplied by 703. See the BMI page for these equations and for further information on the Body Mass Index. To calculate your own BMI, use our BMI calculator.`
+        questionName: `What is a normal BMR for a woman?`,
+        acceptedAnswerText: `How Important Is Your BMR/BEE? Typically about 60% of our total energy needs come from resting metabolism (see above), but this varies greatly depending on our activity level. The average BMR for an American woman is about 1,400 calories, while for a man its about 1,800.`
+      },
+
+      {
+        questionName: `Why are BMR calculators so different?`,
+        acceptedAnswerText: ` That's a lot of room for error if BMR is your primary tool to assess your caloric requirements. Your BMR can vary dramatically from another person who is the same age, height and weight as you. This is because there are many variables that affect how your body uses energy.`
       },
       {
-        questionName: `Can BMI tell me how much weight to lose?`,
-        acceptedAnswerText: `Yes, BMI can indicate how much weight you ought to lose, and correspondingly (for those who are underweight) it can indicate how much weight should be gained. While the variables in the BMI equations can be re-ordered to calculate this, a much simpler way is to use the KiwiCover BMI calculator. For people who are not in the healthy weight range for their gender and ethnicity, the calculator automatically calculates the number of kilograms by which their weight should be either reduced or increased, in order to achieve a weight which is just inside the healthy weight range.`
+        questionName: `How many calories should I eat if my BMR is 1500?`,
+        acceptedAnswerText: `You never want your total caloric intake to be less than your BMR. If your BMR is 1500 calories, you should never eat less than 1500 calories in a day.`
       },
       {
-        questionName: `What BMI categories are there?`,
-        acceptedAnswerText: `The five principal categories for BMI are detailed in the BMI Categories and Ranges section of the main BMI page. That section contains a table which provides an example of BMI categories and ranges based on New Zealand European males and females, but it is important to note that this is an example only. While category descriptions remain the same, BMI ranges tend to differ according to ethnicity, and those differences can be significant. That is why ethnicity is an important factor in the KiwiCover BMI calculator.`
+        questionName: `How do I increase my BMR to lose weight?`,
+        acceptedAnswerText: `<p>5 ways to boost metabolism</p>
+        <p>1. Exercise more. Add interval training to your cardio routine and burn more calories in less time.</p>
+        <p>2. 5 Weight train. Add muscle mass to your body and you can burn more calories at rest.</p>
+        <p>3. Don't skip meals, especially breakfast</p>
+        <p>4. Eat fat-burning foods.</p>
+        <p>5. Get a good night's sleep every night</p>`
       }
     ]
   },
   listItems: [
     {
-      title: `What Is Body Mass Index?`,
-      description: `<p>BMI is Body Mass Index a parameter to assess nutritional status as per height and weight. It is a ratio between weight in kilograms and height in square meters.</p>
-      <p>Standard BMI ranges and nutritional status as per WHO.</p>
-      <table class="min-w-full">
-      <thead class="bg-white border-b"><tr>
-      <th class="border border-slate-300 ...">BMI</th>
-      <th class="border border-slate-300 ...">WEIGHT STATUS(G/DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    <td class="border border-slate-300 ...">Below 18.5</td>
-    <td class="border border-slate-300 ...">Underweight</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">18.5 – 24.9</td>
-  <td class="border border-slate-300 ...">Normal weight</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">25.0–29.9</td>
-  <td class="border border-slate-300 ...">Pre-obesity</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">30.0–34.9</td>
-  <td class="border border-slate-300 ...">Obesity class I</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">35.0–39.9</td>
-  <td class="border border-slate-300 ...">Obesity class II</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">Above 40</td>
-  <td class="border border-slate-300 ...">Obesity class III</td>
-  </tr>
-  </tbody>
-  </table>`,
+      title: `What Is BMR(Basal Metabolic Rate)?`,
+      description: `<p>BMR stands for Basal Metabolic Rate. It is the rate of energy expenditure per unit time at rest. BMR can only be measured in endothermic animals. The amount of energy expenditure is often measured by oxygen consumption.</p>
+      `,
     },
     {
-      title: `BMI chart Kids`,
-      description: `<p>BMI for age percentile is basically designed to assess growth pattern of children and teenage.</p>
-      <table class="min-w-full">
-      <thead class="bg-white border-b"><tr>
-      <th class="border border-slate-300 ...">WEIGHT STATUS CATEGORY</th>
-      <th class="border border-slate-300 ...">PERCENTILE RANGE</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td class="border border-slate-300 ...">Underweight</td>
-  <td class="border border-slate-300 ...">Less than the 5th percentile</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">Normal or Healthy Weight</td>
-  <td class="border border-slate-300 ...">5th percentile to less than the 85th percentile</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">Overweight</td>
-  <td class="border border-slate-300 ...">85th to less than the 95th percentile</td>
-  </tr>
-  <tr>
-  <td class="border border-slate-300 ...">Obese</td>
-  <td class="border border-slate-300 ...">Equal to or greater than the 95th percentile</td>
-  </tr>
-  </table>`,
+      title: `How To Calculate Your BMR Manually`,
+      description: `<p>To calculate BMR, you need to check your height and weight and analyze your activity level. If you are aware of all these parameters, you can calculate your BMR manually using the following equations.</p>
+      <p><b>BMR For Men</b></p>
+      <p>BMR (metric) = (10 × weight in kg) + (6.25 × height in cm) – (5 × age in years) + 5</p>
+      
+      <p>BMR (imperial) = (4.536 × weight in pounds) + (15.88 × height in inches) –(5 × age) + 5</p>
+      <p><b>BMR For Women</b></p>
+      <p>BMR (metric) = (10 × weight in kg) + (6.25 × height in cm) – (5 × age in years) – 161</p>
+      
+      <p>BMR (imperial) = (4.536 × weight in pounds) + (15.88 × height in inches) – (5 × age) – 161</p>  `,
     },
     {
-      title: `How to calculate body mass index?
-      In Metric Scale`,
-      description: `<p>Step 1: Measure your weight in kg preferably in an empty stomach to get actual weight.</p>
-      <p>Step 2: Measure height by Stadiometer and convert it to meter by dividing it by 100.</p>
-      <p>In Imperial Scale</p>
-      <p>Step 1: Measure weight in pounds by digital weighing machine.</p>
-      <p>Step 2: Multiply height in inches inself.</p>
-      <p>Step 3: Divide weight and height, results should be multiplied by 703..</p>`,
+      title: `How To Use BMR Calculator To Lose Weight`,
+      description: `<p>Knowing your BMR is an important factor if you want to lose weight. Once you know your BMR and the calories you expend while doing exercise, you can easily improve your calorie intake.</p>
+      <p>If you want to lose weight, you need to reduce your intake by 500 calories per day, which is enough to lose 1-2 pounds per week or so based on your activity level.</p>
+      `,
     },
     {
-      title: `Risks of being overweight?`,
-      description: `<p>Overweight or severely obesity increases the risk of many diseases as per Postgraduate Medicine review studies :</p>
-      <ol>
-      <li>Diabetes</li>
-      <li>Cardiovascular disorders</li>
-      <li>Metabolic Syndrome</li>
-      <li>High Blood Pressure</li>
-      <li>Pancreatitis</li>
-      <li>Gallbladder diseases</li>
-      <li>Sleep Apnea and breathing problem</li>
-      <li>Osteoarthritis</li>
-      <li>Non Alcoholic Fatty Liver diseases</li>
-      <li>Pulmonary Complications</li>
-      <li>Depression</li>
-      <li>Low Quality of life</li>
-      </ol>`,    
+      title: `Are BMR tests accurate?`,
+      description: `<p>Online BMR tests give average data to analyze how much you need to consume per day. Consult a medical practitioner and get your BMR checked by using calorimetry device for exact results.</p>
+      `,    
     },
     {
-      title: `Risks for being underweight?`,
-      description: `<p>Being underweight multiple risks are associated with it:</p>
-      <ol>
-      <li>Malnutrition</li>
-      <li>Low Bone Mineral Density</li>
-      <li>Poor Immune System</li>
-      <li>Retarded or stunted growth and development among children.</li>
-      <li>Hormonal imbalance especially among women</li>
-      </ol>`,
-     },
-    {
-      title: `Limitations of BMI`,
-      description: `<p>BMI is not an accurate measure when it comes to analyse body fat</p> 
-      <ol>
-      <li> BMI measures overall nutritional status in relation to height and weight. No mention of body fat percentage or muscle mass.</li>
-      <li>It does not distinguish water weight, bone mass etc.</li>
-      <li>It is not specific to sex of a person. For eg: BMI of male and female is same whereas male has more muscle mass and female has more of fat mass which is not mentioned in BMI chart.</li>
-      </ol>`,    
+      title: `Difference Between BMR And RMR`,
+      description: `<p>RMR (Resting Metabolic Rate) is the rate at which your body expends calories while you are in relaxed or sleeping, while BMR measures the minimum calorie expenditure while you are resting or inactive but awake.</p>`,    
     },
 
-    {
-      title: `What is a healthy BMI for women?`,
-      description: `<p>BMI varies as per age, height and weight. It is invariable in respect to gender. Though women have more fat mass compared to men but it does not affect BMI and no scientific evidence mentioned specific BMI for women.</p>`,
-    },
   ],
   embed:{
     title: `Embed Code`,
