@@ -4,7 +4,7 @@ user=ahmad
 today=$(date +%Y%m%d)
 
 src=/home/iffat/NIDE/bestrani-tools
-dst=/home/iffat/backup/
+dst=/home/ahmad/backup/
 path=tools
 
 # build project
