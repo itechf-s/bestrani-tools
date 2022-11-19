@@ -1,5 +1,6 @@
 import { tw } from 'twind';
 import Button from '@/components/button';
+import content from '@/components/content/home';
 
 const quickLinks = {
   name: `Quick Links`,
@@ -24,7 +25,6 @@ const favoriteSites = {
   links: [
     { title: `Theislah`, url: `https://theislah.com` },
     { title: `Fincz`, url: `https://fincz.com` },
-    { title: `Itechf`, url: `https://itechf.com` },
     { title: `Dqote`, url: `https://dqote.com` },
   ],
 };
@@ -33,7 +33,7 @@ const Footer = () => (
   <footer className={tw(`bg-white border-t border-gray-400 pt-2 pb-2`)}>
     <div className={tw(`max-w-7xl mx-auto text-gray-400 px-8 lg:px-0 flex flex-wrap pb-2`)}>
       <div className={tw(`mb-14 flex items-center w-full`)}>
-        <img className={tw(`h-10 w-auto mr-4`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
+        <img className={tw(`h-10 w-auto mr-4`)} src={content.meta.logo} alt="logo" width={213} height={47} />
         <p className={tw(`text-4xl text-indigo-500 font-bold`)}>FASHION</p>
       </div>
       <div className={tw(`w-full lg:w-1/2`)}>

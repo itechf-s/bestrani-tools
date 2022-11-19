@@ -4,6 +4,8 @@ const home = {
     title: `Calculator Tools – Some common Calculators you can used in your daily life and in Various Stage Of Life`,
     description: `A Small Electronic Machine Used For Calculating Figures You can do simple or advanced calculations.`,
     keyword: `Calculator`,
+    favicon: `https://bestrani.com/wp-content/uploads/2021/01/bestrani-favicon.png`,
+    logo: `https://bestrani.com/wp-content/uploads/2021/01/bestrani-logo.png`,
     url: `https://bestrani.com/tools`,
     published_time: `2022-04-24T08:30:00+05:30`,
     modified_time: `2022-04-24T08:30:00+05:30`,

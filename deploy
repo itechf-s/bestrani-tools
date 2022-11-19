@@ -3,8 +3,8 @@ serverIp=login.itechf.com
 user=ahmad
 today=$(date +%Y%m%d)
 
-src=/home/ahmad/NIDE/bestrani-tools
-dst=/home/ahmad/backup/
+src=/home/iffat/NIDE/bestrani-tools
+dst=/home/iffat/backup/
 path=tools
 
 # build project

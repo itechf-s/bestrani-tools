@@ -1,6 +1,7 @@
 import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
+import content from '@/components/content/home';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
@@ -109,7 +110,7 @@ const Navigation = () => {
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
               <a href="/">
-                <img className={tw(`h-10 w-auto`)} src="https://bestrani.com/images/Bestrani-logo.webp" alt="logo" width={213} height={47} />
+                <img className={tw(`h-10 w-auto`)} src={content.meta.logo} alt="logo" width={213} height={47} />
               </a>
             </div>
             <div className={tw(`hidden md:block`)}>

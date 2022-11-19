@@ -30,7 +30,7 @@ const MetaTags = ({ data }: any) => {
         datePublished={data.meta.published_time}
         authorName={data.meta.author}
         publisherName='BestRani'
-        publisherLogo='https://bestrani.com/images/Bestrani-logo.webp'
+        publisherLogo={data.meta.logo}
       />
       <BreadcrumbJsonLd itemListElements={data.breadcrumbListElements} />
     </>
